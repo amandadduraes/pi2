@@ -63,7 +63,6 @@ img
     display: block;
     width: 100%;
     font-size: 39px;
-    color: #DC143C;
     line-height: 1.2;
     text-align: left;
     padding-bottom: 4px;
@@ -72,14 +71,14 @@ img
 {
     width: 100%;
     position: relative;
-    border-bottom: 2px solid #DC143C;
+    border-bottom: 2px solid #87cefa;
     margin-bottom: 20px;
 }
 .label-input
 {
     font-size: 18px;
     font-weight: 600;
-    color: #DC143C;
+    color: #87cefa;
     line-height: 1.2;
     padding-left: 2px;
 
@@ -91,7 +90,7 @@ img
     height: 32px;
     background: transparent;
     font-size: 18px;
-    color: #DC143C;
+    color: #87ceeb;
     line-height: 1;
     padding: 0 2px;
     border: 0;
@@ -120,7 +119,7 @@ img
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
-    background: #d5007d;
+    background: #ADD8E6;
 }
 .input:focus+ .focus-input:before 
 
@@ -137,7 +136,7 @@ img
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right,  #FF6347,#DC143C, #FF6347);
+    background-image: linear-gradient(to right, 	#ADD8E6,#000080, 	#ADD8E6);
     cursor: pointer;
     color: #fff;
     font-family: 'Poppins-SemiBold';
@@ -151,6 +150,5 @@ img
 }
 .link-to-login {
     padding-bottom:12px;
-    color: #d5007d;
     text-decoration: none;
 }
