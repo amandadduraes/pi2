@@ -9,54 +9,11 @@
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <script>
-        let questions = [];
-
-        function getUrlParameter(sParam) {
-            var sPageURL = window.location.search.substring(1),
-                sURLVariables = sPageURL.split('&'),
-                sParameterName,
-                i;
-
-            for (i = 0; i < sURLVariables.length; i++) {
-                sParameterName = sURLVariables[i].split('=');
-
-                if (sParameterName[0] === sParam) {
-                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                }
-            }
-        };
-
-        $(document).ready(function () {
-            const atividadeId = getUrlParameter('ativ')
-            if(!atividadeId) {
-                alert('Erro ao encontrar atividade!')
-                return;
-            }
-            
-            $.ajax({
-                url: '../controller/QuestaoController.php',
-                type: 'GET',
-                data: {
-                    getByAtividadeId: atividadeId,
-                },
-                success: function(data) {
-                    const questoes = JSON.parse(data);
-                    const parsed = questoes.map((q) => ({
-                        numb: q.id,
-                        question: q.descricao,
-                        answer: q.alternativas.filter((a) => a.id === q.alternativa_correta_id)[0].descricao,
-                        options: q.alternativas.map((a) => a.descricao)
-                    }));
-                    questions = parsed;
-                }
-            });
-        });
-    </script>
+  
 </head>
 <body>
 
-  <img src="../assets/img/question.svg" alt="" class="wave">
+  <img src="../assets/img/perguntas.svg" alt="" class="wave">
     <!-- start Quiz button -->
     <div class="start_btn"><button>Iniciar Quiz!</button></div>
 
