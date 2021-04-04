@@ -12,15 +12,21 @@ textarea {
   font-family: 'Poppins-SemiBold';
 }
 
-.container {
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.container-teste {
+  padding: 20px;
+  height: 100%;
+  display: flex;
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 2rem;
   background-color: #fafafa;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
 

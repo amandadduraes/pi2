@@ -1,3 +1,13 @@
+@font-face
+{
+    font-family: 'Poppins-SemiBold';
+    src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body
 {
     margin: 0;
@@ -35,11 +45,10 @@ img
 .wrap-signup
 {
     width: 520px;
-    min-height: 100vh;
     background: #fff;
     border-radius: 2px;
     position: relative;
-    padding: 72px 50px 0px 50px;
+    padding: 12px;
 
 }
 .signup-form
@@ -64,7 +73,7 @@ img
     width: 100%;
     position: relative;
     border-bottom: 2px solid #DC143C;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
 }
 .label-input
 {
@@ -79,12 +88,13 @@ img
 {
     display: block;
     width: 100%;
-    height: 50px;
+    height: 32px;
     background: transparent;
-    font-size: 22px;
+    font-size: 18px;
     color: #DC143C;
-    line-height: 1.2;
+    line-height: 1;
     padding: 0 2px;
+    border: 0;
 }
 .focus-input
 {
@@ -139,6 +149,8 @@ img
 {
     background-position: right;
 }
-.link-to-login{
-    padding-bottom:30px ;
+.link-to-login {
+    padding-bottom:12px;
+    color: #d5007d;
+    text-decoration: none;
 }
