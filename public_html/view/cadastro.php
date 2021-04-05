@@ -5,11 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Cadastro</title>
 
-      <!--Bootstrap Versão 4.1.3  -->
-    <link rel="stylesheet" href="../assets/bootstrap4/css/bootstrap.min.css">
 
-      <link rel="stylesheet" type="text/css" href="../assets/css/cadastro.css">
-      <script type="text/javascript" src="../assets/js/jquery.min.js"></script>     
+      <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+
+      <link rel="stylesheet" type="text/css" href="../Assets/css/cadastro.css">
+      <script type="text/javascript" src="../Bibliotecas/jquery/jquery.min.js"></script>     
 
   
    </head>
@@ -18,13 +18,13 @@
 
       <div class="container-cadastro">
          <div class="signup-more">
-            <img src="../assets/img/cadastro.svg" alt="">
+            <img src="../Assets/img/cadastro.svg" alt="">
          </div>
          <div class="wrap-signup">
           
             <form  id="cadastrar" class="signup-form" name="cadastro">
                <span class="signup-form-title text-info"> Cadastrar</span>
-               <a href="./login.html" class="link-to-login text-info "> Já é cadastrado? Clique aqui para fazer login.</a>
+               <a href="login.php" class="link-to-login text-info "> Já é cadastrado? Clique aqui para fazer login.</a>
                <div class="wrap-input">
                   <span class="lable-iput">Nome</span>
                   <input id="nome" type="text" name="nome" class="input" placeholder="Nome" required/>
@@ -60,7 +60,7 @@
    </body>
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="../assets/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </html>
