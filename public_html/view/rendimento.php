@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <script src="../assets/js/jquery.min.js"></script>
         <!--Bootstrap Versão 4.1.3  -->
