@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato</title>
-        <link rel="stylesheet" type="text/css" href="../assets/css/mais.css">
+      <link rel="stylesheet" type="text/css" href="../assets/css/mais.css">
       
          <!--Bootstrap Versão 4.1.3  -->
        <link rel="stylesheet" href="../assets/bootstrap4/css/bootstrap.min.css">
