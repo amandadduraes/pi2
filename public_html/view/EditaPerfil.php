@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../Assets/css/EditaPerfil.css">
-    <link rel="stylesheet" href="../../Bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/EditaPerfil.css">
+    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -46,103 +47,103 @@ if(isset($_FILES["foto"])){
   $foto=$_FILES["foto"]["tmp_name"];
 }
 ?>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
+    <nav class="navbar  navbar-dark bg-info">
+        <div>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
+                style="display: flex; align-items: center;">
+                <span class="navbar-toggler-icon"></span>
+                <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
+        </div>
+        <!-- Menu hamburhuer -->
+        </button>
+        <!-- Navegação -->
+        <div class="collapse navbar-collapse" id="nav-target">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a href="../index.html" class="nav-link text-white">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="atividades.php" class="nav-link text-white">Atividades Teorícas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="praticas.php" class="nav-link text-white">Atividades Práticas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="CriaQuiz.php" class="nav-link text-white">Criar Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a href="EditaPerfil.php" class="nav-link text-white">Editar Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link text-white">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="mais.php" class="nav-link text-white">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="rendimento.php" class="nav-link text-white">Rendimento</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Turmas.php" class="nav-link text-white">Matérias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="videos.html" class="nav-link text-white">Vídeos</a>
+                </li>
 
-    <script scr="../../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script scr="../../Bibliotecas/jquery/jquery.min.js"></script>
 
-    <div class="container-fluid d-flex p-0 col-8">
-    <div class="sidebar-container">
-            <div class="sidebar-logo">
-                DO 0 AO 1
-            </div>
-            <ul class="sidebar-navigation">
-                <li class="header">Navegação</li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-video-camera" aria-hidden="true"></i> Material em Video
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book" aria-hidden="true"></i> Material em Leitura
-                    </a>
-                </li>
-                <li>
-                    <a href="MenuQuiz.php">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> Quizz
-                    </a>
-                </li>
-                <li>
-                    <a href="EditaQuiz.php">
-                        <i class="fa fa-superpowers" aria-hidden="true"></i> Cria Quizz
-                    </a>
-                </li>
-                <li class="header">Perfil</li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-id-card-o" aria-hidden="true"></i> Perfil
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-trophy" aria-hidden="true"></i> Ranking
-                    </a>
-                </li>
-                <li>
-                    <a href="EditaPerfil.php">
-                        <i class="fa fa-cogs" aria-hidden="true"></i> Editar Perfil
-                    </a>
-                </li>
-                <li class="header">Conect</li>
-                <li>
-                    <a href="login.php">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i> Login
-                    </a>
-                </li>
             </ul>
         </div>
-        <form method="POST" action="" enctype='multipart/form-data' class="col-10">
-            <div class="container">
-                <div class="col-12 d-flex p-5">
-                    <div class="col-7 mx-auto">
-                        <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required>
-                            <label class="form-control-placeholder" for="nome">Nome</label>
-                        </div>
-                        <div class="form-group"> <input type="text" id="sobrenome" name="sobrenome" class="form-control"
-                                required> <label class="form-control-placeholder" for="sobrenome">Sobrenome</label>
-                        </div>
-                        <div class="form-group"> <input type="text" id="email" name="email" class="form-control"
-                                required>
-                            <label class="form-control-placeholder" for="email">Email</label>
-                        </div>
-                        <div class="form-group"> <input type="text" id="fone" name="fone" class="form-control" required>
-                            <label class="form-control-placeholder" for="fone">Fone</label>
-                        </div>
-                    </div>
-                    <div class="col-7 mx-auto">
-                        <div class="form-group"> <input type="text" id="country" name="country" class="form-control"
-                                required> <label class="form-control-placeholder" for="country">País</label> </div>
-                        <div class="form-group"> <input type="text" id="city" name="city" class="form-control" required>
-                            <label class="form-control-placeholder" for="city">Cidade/Município</label>
-                        </div>
-                        <div class="form-group"> <input type="text" id="Instituição" name="Instituição"
-                                class="form-control" required> <label class="form-control-placeholder"
-                                for="Instituição">Instituição</label>
-                        </div>
-                        <div class="form-group"> <input type="text" id="Período" name="Período" class="form-control"
-                                required> <label class="form-control-placeholder" for="Período">Período</label> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex align-items-end flex-column">
-                <div class="d-flex align-items-end flex-column">
-                    <label>Selecione uma foto de Perfil:</label>
-                    <input type="file" id="foto" name="foto" multiple="multiple" />
-                </div>
 
+    </nav>
+    <form method="POST" action="" enctype='multipart/form-data' class="col-10">
+        <div class="container">
+            <div class="col-12 d-flex p-5">
+                <div class="col-7 mx-auto">
+                    <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required>
+                        <label class="form-control-placeholder" for="nome">Nome</label>
+                    </div>
+                    <div class="form-group"> <input type="text" id="sobrenome" name="sobrenome" class="form-control"
+                            required> <label class="form-control-placeholder" for="sobrenome">Sobrenome</label>
+                    </div>
+                    <div class="form-group"> <input type="text" id="email" name="email" class="form-control" required>
+                        <label class="form-control-placeholder" for="email">Email</label>
+                    </div>
+                    <div class="form-group"> <input type="text" id="fone" name="fone" class="form-control" required>
+                        <label class="form-control-placeholder" for="fone">Fone</label>
+                    </div>
+                </div>
+                <div class="col-7 mx-auto">
+                    <div class="form-group"> <input type="text" id="country" name="country" class="form-control"
+                            required> <label class="form-control-placeholder" for="country">País</label> </div>
+                    <div class="form-group"> <input type="text" id="city" name="city" class="form-control" required>
+                        <label class="form-control-placeholder" for="city">Cidade/Município</label>
+                    </div>
+                    <div class="form-group"> <input type="text" id="Instituição" name="Instituição" class="form-control"
+                            required> <label class="form-control-placeholder" for="Instituição">Instituição</label>
+                    </div>
+                    <div class="form-group"> <input type="text" id="Período" name="Período" class="form-control"
+                            required> <label class="form-control-placeholder" for="Período">Período</label> </div>
+                </div>
             </div>
-            <p> <input type="submit" value="Atualizar Perfil" class="btn btn-lg btn-primary" /> </p>
-        </form>
-    </div>
+        </div>
+        <div class="d-flex align-items-end flex-column">
+            <div class="d-flex align-items-end flex-column">
+                <label>Selecione uma foto de Perfil:</label>
+                <input type="file" id="foto" name="foto" multiple="multiple" />
+            </div>
+
+        </div>
+        <p> <input type="submit" value="Atualizar Perfil" class="btn btn-lg btn-primary" /> </p>
+    </form>
+
 </body>
+
 </html>

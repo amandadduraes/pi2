@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../assets/css/perguntas.css">
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+    <link rel="stylesheet" href="../Assets/css/perguntas.css">
+    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
   
 </head>
 <body>
 
-  <img src="../assets/img/perguntas.svg" alt="" class="wave">
+  <img src="../Assets/img/perguntas.svg" alt="" class="wave">
     <!-- start Quiz button -->
     <div class="start_btn"><button>Iniciar Quiz!</button></div>
 
@@ -77,7 +75,7 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-     <script src="../assets/js/perguntas.js"></script>
+     <script src="../Assets/js/perguntas.js"></script>
 
    
 

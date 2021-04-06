@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Assets/css/CriaQuiz.css">
 
     <title>Document</title>
@@ -66,63 +67,64 @@ if(!$erro){
   
 }
 ?>
-  
-    <script scr="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../Assets/js/CriaQuiz.js"></script>
 
     <nav class="navbar  navbar-dark bg-info">
         <div>
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target" style="display: flex; align-items: center;">
-          <span class="navbar-toggler-icon"></span>
-          <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 ou 1</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
+                style="display: flex; align-items: center;">
+                <span class="navbar-toggler-icon"></span>
+                <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
         </div>
-         <!-- Menu hamburhuer -->
-         </button>
-         <!-- Navegação -->
-         <div class="collapse navbar-collapse" id="nav-target">
+        <!-- Menu hamburhuer -->
+        </button>
+        <!-- Navegação -->
+        <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
-               <li class="nav-item ">
-                  <a href="" class="nav-link text-white">Inicio</a>
-               </li>
-               <li class="nav-item">
-                  <a href="" class="nav-link text-white">Atividades Teorícas</a>
-               </li>
-               <li class="nav-item">
-                <a href="" class="nav-link text-white">Atividades Práticas</a>
-             </li>
-               <li class="nav-item">
-                  <a href="" class="nav-link text-white">Criar Quiz</a>
-               </li>
-               <li class="nav-item">
-                <a href="" class="nav-link text-white">Editar Perfil</a>
-             </li>
-             <li class="nav-item">
-              <a href="" class="nav-link text-white">Login</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link text-white">Sobre</a>
-              </li>
-              <li class="nav-item">
-                  <a href="" class="nav-link text-white">Menu Quiz</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link text-white">Rendimento</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link text-white">Rendimento</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link text-white">Matérias</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link text-white">Vídeos</a>
-            </li>
-     
+                <li class="nav-item ">
+                    <a href="../index.html" class="nav-link text-white">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="atividades.php" class="nav-link text-white">Atividades Teorícas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="praticas.php" class="nav-link text-white">Atividades Práticas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="CriaQuiz.php" class="nav-link text-white">Criar Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a href="EditaPerfil.php" class="nav-link text-white">Editar Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link text-white">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="mais.php" class="nav-link text-white">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="rendimento.php" class="nav-link text-white">Rendimento</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Turmas.php" class="nav-link text-white">Matérias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="videos.html" class="nav-link text-white">Vídeos</a>
+                </li>
+
 
             </ul>
-         </div>
-         
-      </nav>
+        </div>
+
+    </nav>
     <!-- Os campos aparecerão aqui -->
     <form method="POST" action="" role="form">
         <div id="Questoes" class="Questoes col-12 p-5">
@@ -193,7 +195,7 @@ if(!$erro){
     </form>
 
     <!-- Modelo Quiz -->
-    
+
     <div class="modelo questao col-12 d-none p-5">
         <div class="col-8 mx-auto">
             <fieldset>
@@ -258,9 +260,6 @@ if(!$erro){
             </fieldset>
         </div>
     </div>
-    <script src="../Assets/js/CriaQuiz.js"></script>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="../Bibliotecas/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </body>
 
 </html>

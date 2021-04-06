@@ -13,12 +13,20 @@
 </head>
 
 <body>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
     <nav class="navbar  navbar-dark bg-info">
         <div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
                 style="display: flex; align-items: center;">
                 <span class="navbar-toggler-icon"></span>
-                <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 ou 1</a>
+                <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
         </div>
         <!-- Menu hamburhuer -->
         </button>
@@ -26,40 +34,34 @@
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                    <a href="" class="nav-link text-white">Inicio</a>
+                    <a href="../index.html" class="nav-link text-white">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Atividades Teorícas</a>
+                    <a href="atividades.php" class="nav-link text-white">Atividades Teorícas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Atividades Práticas</a>
+                    <a href="praticas.php" class="nav-link text-white">Atividades Práticas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Criar Quiz</a>
+                    <a href="CriaQuiz.php" class="nav-link text-white">Criar Quiz</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Editar Perfil</a>
+                    <a href="EditaPerfil.php" class="nav-link text-white">Editar Perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Login</a>
+                    <a href="login.php" class="nav-link text-white">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Sobre</a>
+                    <a href="mais.php" class="nav-link text-white">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Menu Quiz</a>
+                    <a href="rendimento.php" class="nav-link text-white">Rendimento</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Rendimento</a>
+                    <a href="Turmas.php" class="nav-link text-white">Matérias</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-white">Rendimento</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link text-white">Matérias</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link text-white">Vídeos</a>
+                    <a href="videos.html" class="nav-link text-white">Vídeos</a>
                 </li>
 
 
@@ -117,10 +119,7 @@
                 </a> </div>
         </div>
     </div>
-    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"> </script>
-    <script scr="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
