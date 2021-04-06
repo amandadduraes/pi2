@@ -79,7 +79,7 @@
                     <div class="details">
                         <h3 class="text-info">Objeto</h3>
                         <p>Este quiz tem como finalidade testar o conhecimento dos alunos sobre Objeto.</p>
-                        <a class="text-info" href="../view/perguntas.html">Iniciar Quiz</a>
+                        <a class="text-info" href="../view/perguntas.php">Iniciar Quiz</a>
                     </div>
 
                 </li>
