@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                    <a href="../index.html" class="nav-link text-white">Inicio</a>
+                    <a href="../index.php" class="nav-link text-white">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a href="atividades.php" class="nav-link text-white">Atividades Teorícas</a>
@@ -52,7 +52,7 @@
                     <a href="Turmas.php" class="nav-link text-white">Matérias</a>
                 </li>
                 <li class="nav-item">
-                    <a href="videos.html" class="nav-link text-white">Vídeos</a>
+                    <a href="videos.php" class="nav-link text-white">Vídeos</a>
                 </li>
 
 
@@ -66,11 +66,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
     </script>
-    <script src="../Bibliotecas/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="../Bibliotecas/popper.min.js">
     </script>
     <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </body>
