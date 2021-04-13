@@ -60,7 +60,7 @@ if(!$erro){
                                         <p> Não tem cadastro? &nbsp<a href="cadastro.php"
                                                 class="font-italic text-muted"> <u>Crie
                                                     uma conta</u></a></p>
-                                        <p><a href="../index.html" class="font-italic text-muted"> <u>menu</u></a></p>
+                                        <p><a href="../index.php" class="font-italic text-muted"> <u>menu</u></a></p>
                                     </div>
                                 </form>
                             </div>
