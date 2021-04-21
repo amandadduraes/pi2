@@ -131,11 +131,32 @@ if(!$erro){
                     <fieldset>
                         <div class="row">
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Tipo da questão:</label>
+                                <select id="nome" class="browser-default custom-select">
+                                    <option value="" disabled selected>Categoria</option>
+                                    <?php
+                                        $conexao=mysqli_connect("localhost", "root", "toor123", "pi2", 3306);
+                                        $seleciona=mysqli_query($conexao,"select * from tipo");
+                                            while($campo=mysqli_fetch_array($seleciona)){?>
+                                    <option value="<?=$campo["id"]?>"><?=$campo["nome"]?></option>
+                                      <?php }?>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Descrição da atividade:</label>
+                                <textarea name="descricao" type="text" class="form-control" id="exampleInputEmail1"
+                                    placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" class="tex">Questão:</label>
                                 <textarea name="pergunta[]" type="text" class="form-control" id="exampleInputEmail1"
                                     placeholder="Insira a pergunta aqui!"></textarea>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-1">
