@@ -13,56 +13,6 @@
 </head>
 
 <body>
-    <?php
-    include("../model/CriaQuizBanco.php");
-$arrdeveter = [
-  "pergunta",
-  "setA",
-  "setB",
-  "setC",
-  "setD",
-  "questaoA",
-  "questaoB",
-  "questaoC",
-  "questaoD",
-  "descricao",
-  "tipo",
-  "turma"
-];
-//print_r($_POST);
-$erro = false;
-foreach($arrdeveter as $dev){
-if(!isset($_POST[$dev])){
-$erro = true;
-// echo "<br>".$dev;
-}
-}
- //echo "<br>".$erro;
-if(!$erro){
-    $desc_atv = $_POST["descricao"];
-    $tipo = $_POST["tipo"];
-    $turma = $_POST["turma"];
-    criaAtividade($desc_atv, $turma, $tipo);
-
-  $pergunta=$_POST["pergunta"];
-  $questaoA = $_POST["questaoA"];
-  $questaoB = $_POST["questaoB"];
-  $questaoC = $_POST["questaoC"];
-  $questaoD = $_POST["questaoD"];
-  
-  $setA=$_POST["setA"];
-  $setB=$_POST["setB"];
-  $setC=$_POST["setC"];
-  $setD=$_POST["setD"];
-  
-  
-
-//   foreach (int i in pergunta){
-
-//   }
-  
-}
-?>
     <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
     </script>
     <script src="../Bibliotecas/popper.min.js">
@@ -120,7 +70,8 @@ if(!$erro){
 
     </nav>
     <!-- Os campos aparecerão aqui -->
-    <form method="POST" action="" role="form">
+    <form method="POST" action="../controller/Quiz.php" role="form">
+        <input type="hidden" name="acao" value="inserir">
         <div id="Questoes" class="Questoes col-12 p-5">
             <div class="d-flex p-5">
                 <div class="col-8 mx-auto">

@@ -1,20 +1,21 @@
 <?php
-    include("conexao.php");
+    
 function criaAtividade($desc_atv, $turma, $tipo){
-        $sql = "insert into atividade (id, descricao, turma_codigo, id_tipo) values (?,?,?,?)";
-        $stmt = $PDO->prepare($sql);
-        $stmt->bindParam(1, null);
-        $stmt->bindParam(2, $desc_atv);
-        $stmt->bindParam(3, $turma);
-        $stmt->bindParam(4, $tipo);
-        if($stmt->execute()){
-            if($stmt->rowCount() > 0){
-                echo '<script>alert("Atividade criada com sucesso!");</script>';
-            }else{
-                echo '<script>alert("Erro ao criar a atividade!");</script>';
-            }
+    include("conexao.php");
+    $sql = "insert into atividade (descricao, turma_codigo, id_tipo) values (?,?,?)";
+    $stmt = $PDO->prepare($sql);
+    $stmt->bindParam(1, $desc_atv);
+    $stmt->bindParam(2, $turma);
+    $stmt->bindParam(3, $tipo);
+    
+    if($stmt->execute()){
+        if($stmt->rowCount() > 0){
+            echo '<script>alert("Atividade criada com sucesso!");</script>';
+        }else{
+            echo '<script>alert("Erro ao criar a atividade!");</script>';
         }
     }
+}
 
         // $sql1 = "insert into questao (id, descricao, valor, atividade_id, alternativa_correta_id) values (?,?,?,?,?)"
         // $stmt1 = $PDO->prepare($sql1);
