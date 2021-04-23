@@ -108,37 +108,41 @@ if(isset($_FILES["foto"])){
                     <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required>
                         <label class="form-control-placeholder" for="nome">Nome</label>
                     </div>
-                    <div class="form-group"> <input type="text" id="sobrenome" name="sobrenome" class="form-control"
+                     <!--<div class="form-group"> <input type="text" id="sobrenome" name="sobrenome" class="form-control"
                             required> <label class="form-control-placeholder" for="sobrenome">Sobrenome</label>
-                    </div>
+                    </div> -->
                     <div class="form-group"> <input type="text" id="email" name="email" class="form-control" required>
                         <label class="form-control-placeholder" for="email">Email</label>
                     </div>
-                    <div class="form-group"> <input type="text" id="fone" name="fone" class="form-control" required>
-                        <label class="form-control-placeholder" for="fone">Fone</label>
+
+                    <div class="form-group"> <input type="password" id="email" name="senha" class="form-control" required>
+                        <label class="form-control-placeholder" for="senha">Senha</label>
                     </div>
+                     <!--<div class="form-group"> <input type="text" id="fone" name="fone" class="form-control" required>
+                        <label class="form-control-placeholder" for="fone">Fone</label>
+                    </div> 
                 </div>
-                <div class="col-7 mx-auto">
+                 <div class="col-7 mx-auto">
                     <div class="form-group"> <input type="text" id="country" name="country" class="form-control"
                             required> <label class="form-control-placeholder" for="country">País</label> </div>
                     <div class="form-group"> <input type="text" id="city" name="city" class="form-control" required>
                         <label class="form-control-placeholder" for="city">Cidade/Município</label>
-                    </div>
+                    </div> -->
                     <div class="form-group"> <input type="text" id="Instituição" name="Instituição" class="form-control"
                             required> <label class="form-control-placeholder" for="Instituição">Instituição</label>
                     </div>
-                    <div class="form-group"> <input type="text" id="Período" name="Período" class="form-control"
+                   <!-- <div class="form-group"> <input type="text" id="Período" name="Período" class="form-control"
                             required> <label class="form-control-placeholder" for="Período">Período</label> </div>
                 </div>
             </div>
         </div>
-        <div class="d-flex align-items-end flex-column">
+       <div class="d-flex align-items-end flex-column">
             <div class="d-flex align-items-end flex-column">
                 <label>Selecione uma foto de Perfil:</label>
                 <input type="file" id="foto" name="foto" multiple="multiple" />
-            </div>
+            </div> 
 
-        </div>
+        </div>-->
         <p> <input type="submit" value="Atualizar Perfil" class="btn btn-lg btn-primary" /> </p>
     </form>
 

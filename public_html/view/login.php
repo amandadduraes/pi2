@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Assets/css/login.css">
 
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ if(!$erro){
                         <div class="row">
                             <div class="col-lg-7 col-xl-6 mx-auto">
                                 <h3 class="display-4">LOGIN</h3> <br>
-                                <form method="POST" action="">
+                                <form method="POST" action="../model/Login.php">
                                     <div class="form-group mb-3"> <input name="email" id="inputEmail" type="email"
                                             placeholder="Email" required="" autofocus=""
                                             class="form-control rounded-pill border-0 shadow-sm px-4"> </div>

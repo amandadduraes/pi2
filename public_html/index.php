@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <meta charset="utf-8"/>
   <!--Bootstrap Versão 4.1.3  -->
-    <link rel="stylesheet" href="Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.cssa">
+    <link rel="stylesheet" href="/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
 
   
 </head>
@@ -27,8 +27,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="Bibliotecas/popper.min.js"></script>
-    <script src="Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="/Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="/Bibliotecas/popper.min.js"></script>
+    <script src="/Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

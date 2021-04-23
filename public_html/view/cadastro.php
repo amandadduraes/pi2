@@ -22,7 +22,7 @@
         </div>
         <div class="wrap-signup">
 
-            <form id="cadastrar" class="signup-form" name="cadastro">
+            <form id="cadastrar" class="signup-form" name="cadastro" method="POST" action="../model/Cadastro.php"> 
                 <span class="signup-form-title text-info"> Cadastrar</span>
                 <a href="login.php" class="link-to-login text-info "> Já é cadastrado? Clique aqui para fazer login.</a>
                 <div class="wrap-input">

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Assets/css/teorica.css">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="../Assets/js/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
 
     <title>Atividades Práticas</title>
