@@ -14,6 +14,7 @@
 
 <body>
     <?php
+    include("../model/CriaQuizBanco.php");
 $arrdeveter = [
   "pergunta",
   "setA",
@@ -23,9 +24,12 @@ $arrdeveter = [
   "questaoA",
   "questaoB",
   "questaoC",
-  "questaoD"
+  "questaoD",
+  "descricao",
+  "tipo",
+  "turma"
 ];
- //print_r($_POST);
+//print_r($_POST);
 $erro = false;
 foreach($arrdeveter as $dev){
 if(!isset($_POST[$dev])){
@@ -35,6 +39,11 @@ $erro = true;
 }
  //echo "<br>".$erro;
 if(!$erro){
+    $desc_atv = $_POST["descricao"];
+    $tipo = $_POST["tipo"];
+    $turma = $_POST["turma"];
+    criaAtividade($desc_atv, $turma, $tipo);
+
   $pergunta=$_POST["pergunta"];
   $questaoA = $_POST["questaoA"];
   $questaoB = $_POST["questaoB"];
@@ -46,24 +55,11 @@ if(!$erro){
   $setC=$_POST["setC"];
   $setD=$_POST["setD"];
   
+  
 
-  if($setA == 'certo'){
-    $setB='errado';
-    $setC='errado';
-    $setD='errado';
-  }if($setB == 'certo'){
-    $setA='errado';
-    $setC='errado';
-    $setD='errado';
-  }if($setC == 'certo'){
-    $setA='errado';
-    $setB='errado';
-    $setD='errado';
-  }else{
-    $setA='errado';
-    $setB='errado';
-    $setC='errado'; 
-  }
+//   foreach (int i in pergunta){
+
+//   }
   
 }
 ?>
@@ -132,14 +128,14 @@ if(!$erro){
                         <div class="row">
                             <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" class="tex">Tipo da questão:</label>
-                                <select id="nome" class="browser-default custom-select">
+                                <select name="tipo" id="nome" class="browser-default custom-select">
                                     <option value="" disabled selected>Categoria</option>
                                     <?php
                                         $conexao=mysqli_connect("localhost", "root", "toor123", "pi2", 3306);
                                         $seleciona=mysqli_query($conexao,"select * from tipo");
                                             while($campo=mysqli_fetch_array($seleciona)){?>
                                     <option value="<?=$campo["id"]?>"><?=$campo["nome"]?></option>
-                                      <?php }?>
+                                    <?php }?>
 
                                 </select>
                             </div>
@@ -149,6 +145,13 @@ if(!$erro){
                                 <label for="exampleInputEmail1" class="tex">Descrição da atividade:</label>
                                 <textarea name="descricao" type="text" class="form-control" id="exampleInputEmail1"
                                     placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Código da turma:</label>
+                                <input name="turma" type="text" class="form-control" id="exampleInputEmail1"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="row">
