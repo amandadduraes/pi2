@@ -13,60 +13,6 @@
 </head>
 
 <body>
-    <?php
-$arrdeveter = [
-  "pergunta",
-  "setA",
-  "setB",
-  "setC",
-  "setD",
-  "questaoA",
-  "questaoB",
-  "questaoC",
-  "questaoD"
-];
- //print_r($_POST);
-$erro = false;
-foreach($arrdeveter as $dev){
-if(!isset($_POST[$dev])){
-$erro = true;
-// echo "<br>".$dev;
-}
-}
- //echo "<br>".$erro;
-if(!$erro){
-  $pergunta=$_POST["pergunta"];
-  $questaoA = $_POST["questaoA"];
-  $questaoB = $_POST["questaoB"];
-  $questaoC = $_POST["questaoC"];
-  $questaoD = $_POST["questaoD"];
-  
-  $setA=$_POST["setA"];
-  $setB=$_POST["setB"];
-  $setC=$_POST["setC"];
-  $setD=$_POST["setD"];
-  
-
-  if($setA == 'certo'){
-    $setB='errado';
-    $setC='errado';
-    $setD='errado';
-  }if($setB == 'certo'){
-    $setA='errado';
-    $setC='errado';
-    $setD='errado';
-  }if($setC == 'certo'){
-    $setA='errado';
-    $setB='errado';
-    $setD='errado';
-  }else{
-    $setA='errado';
-    $setB='errado';
-    $setC='errado'; 
-  }
-  
-}
-?>
     <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
     </script>
     <script src="../Bibliotecas/popper.min.js">
@@ -124,18 +70,47 @@ if(!$erro){
 
     </nav>
     <!-- Os campos aparecerão aqui -->
-    <form method="POST" action="" role="form">
+    <form method="POST" action="../controller/Quiz.php" role="form">
+        <input type="hidden" name="acao" value="inserir">
         <div id="Questoes" class="Questoes col-12 p-5">
             <div class="d-flex p-5">
                 <div class="col-8 mx-auto">
                     <fieldset>
                         <div class="row">
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Tipo da questão:</label>
+                                <select name="tipo" id="nome" class="browser-default custom-select">
+                                    <option value="" disabled selected>Categoria</option>
+                                    <?php
+                                        $conexao=mysqli_connect("localhost", "root", "toor123", "pi2", 3306);
+                                        $seleciona=mysqli_query($conexao,"select * from tipo");
+                                            while($campo=mysqli_fetch_array($seleciona)){?>
+                                    <option value="<?=$campo["id"]?>"><?=$campo["nome"]?></option>
+                                    <?php }?>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Descrição da atividade:</label>
+                                <textarea name="descricao" type="text" class="form-control" id="exampleInputEmail1"
+                                    placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" class="tex">Código da turma:</label>
+                                <input name="turma" type="text" class="form-control" id="exampleInputEmail1"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" class="tex">Questão:</label>
                                 <textarea name="pergunta[]" type="text" class="form-control" id="exampleInputEmail1"
                                     placeholder="Insira a pergunta aqui!"></textarea>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-1">
