@@ -20,17 +20,18 @@
     <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
     <script src="../Assets/js/CriaQuiz.js"></script>
-
-    <nav class="navbar  navbar-dark bg-info">
+    <?php
+    include_once "navBar.php";
+    navProfessor();
+    ?>
+    <!-- <nav class="navbar  navbar-dark bg-info">
         <div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
                 style="display: flex; align-items: center;">
                 <span class="navbar-toggler-icon"></span>
                 <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
         </div>
-        <!-- Menu hamburhuer -->
         </button>
-        <!-- Navegação -->
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
@@ -68,7 +69,7 @@
             </ul>
         </div>
 
-    </nav>
+    </nav> -->
     <!-- Os campos aparecerão aqui -->
     <form method="POST" action="../controller/Quiz.php" role="form">
         <input type="hidden" name="acao" value="inserir">
@@ -115,7 +116,7 @@
                         <div class="row">
                             <div class="form-group col-lg-1">
                                 <label class="tex checkbox-inline">
-                                    <input name="setA[]" type="checkbox" id="inlineCheckbox1" value="certo"> a).
+                                    <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="1"> a).
                                 </label>
                             </div>
                             <div class="form-group col-lg-11">
@@ -126,7 +127,7 @@
                         <div class="row">
                             <div class="form-group col-lg-1">
                                 <label class="tex checkbox-inline">
-                                    <input name="setB[]" type="checkbox" id="inlineCheckbox1" value="certo"> b).
+                                    <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="2"> b).
                                 </label>
                             </div>
                             <div class="form-group col-lg-11">
@@ -137,7 +138,7 @@
                         <div class="row">
                             <div class="form-group col-lg-1">
                                 <label class="tex checkbox-inline">
-                                    <input name="setC[]" type="checkbox" id="inlineCheckbox1" value="certo"> c).
+                                    <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="3"> c).
                                 </label>
                             </div>
                             <div class="form-group col-lg-11">
@@ -148,7 +149,7 @@
                         <div class="row">
                             <div class="form-group col-lg-1">
                                 <label class="tex checkbox-inline">
-                                    <input name="setD[]" type="checkbox" id="inlineCheckbox1" value="certo"> d).
+                                    <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="4"> d).
                                 </label>
                             </div>
                             <div class="form-group col-lg-11">
@@ -183,7 +184,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1">
                         <label class="tex checkbox-inline">
-                            <input name="setA[]" type="checkbox" id="inlineCheckbox1" value="certo"> a).
+                            <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="1"> a).
                         </label>
                     </div>
                     <div class="form-group col-lg-11">
@@ -194,7 +195,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1">
                         <label class="tex checkbox-inline">
-                            <input name="setB[]" type="checkbox" id="inlineCheckbox1" value="certo"> b).
+                            <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="2"> b).
                         </label>
                     </div>
                     <div class="form-group col-lg-11">
@@ -205,7 +206,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1">
                         <label class="tex checkbox-inline">
-                            <input name="setC[]" type="checkbox" id="inlineCheckbox1" value="certo"> c).
+                            <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="3"> c).
                         </label>
                     </div>
                     <div class="form-group col-lg-11">
@@ -216,7 +217,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1">
                         <label class="tex checkbox-inline">
-                            <input name="setD[]" type="checkbox" id="inlineCheckbox1" value="certo"> d).
+                            <input name="correta[]" type="checkbox" id="inlineCheckbox1" value="4"> d).
                         </label>
                     </div>
                     <div class="form-group col-lg-11">
