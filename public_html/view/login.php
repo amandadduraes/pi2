@@ -52,7 +52,7 @@ session_start();
                         localStorage.setItem("user_name", user.nome);
                         localStorage.setItem("user_perfil", user.perfil);
 
-                        if (user.perfil == "alsetItemuno") {
+                        if (user.perfil === "aluno") {
                             location.href = "atividades.php";
                         } else {
                             location.href = "turmas.php";
