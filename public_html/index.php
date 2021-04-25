@@ -1,10 +1,9 @@
-<!DOCTYPE >
 <html>
 <head>
   <title>Tela inicial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <meta charset="utf-8"/>
-  <!--Bootstrap Versão 4.1.3  -->
 
     <link rel="stylesheet" href="Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
 
