@@ -43,7 +43,7 @@ function navAluno(){
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="EditaPerfil.php">
             <i class="fa fa-cog"></i>
             Edita Perfil
           </a>
@@ -67,25 +67,25 @@ function navProfessor(){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="mais.php">
             <i class="fa fa-hand-peace-o"></i>
             Sobre nós
             </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="rendimento.php">
             <i class="fa fa-trophy"></i>
             Ranking Geral
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="videos.php">
             <i class="fa fa-youtube-play"></i>
             Video Aulas
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="turmas.php">
             <i class="fa fa-font-awesome"></i>
             Matérias
           </a>
@@ -96,9 +96,9 @@ function navProfessor(){
             Atividades
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Atividades Práticas <i class="fa fa-laptop "></i> </a>
+            <a class="dropdown-item" href="praticas.php">Atividades Práticas <i class="fa fa-laptop "></i> </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Atividades Teóricas <i class="fa fa-book"></i> </a>
+            <a class="dropdown-item" href="atividades.php">Atividades Teóricas <i class="fa fa-book"></i> </a>
           </div>
         </li>
       </ul>
@@ -110,7 +110,7 @@ function navProfessor(){
             Configuração
             </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Cria Quiz <i class="fa fa-plus"></i> </a>
+            <a class="dropdown-item" href="CriaQuiz.php">Cria Quiz <i class="fa fa-plus"></i> </a>
         <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Gerencia Quiz <i class="fa fa-users"></i> </a>
         </div>

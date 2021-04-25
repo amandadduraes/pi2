@@ -1,4 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!DOCTYPE >
 <html>
 
 <head>
@@ -13,16 +14,26 @@
 </head>
 
 <body>
-    <nav class="navbar  navbar-dark bg-info">
+
+<?php
+    session_start();
+    include_once "navBar.php";
+    if($_SESSION["user"] == 'professor'){
+    navProfessor();
+    }else{
+    navAluno();
+    }
+    ?>
+    <!--<nav class="navbar  navbar-dark bg-info">
         <div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
                 style="display: flex; align-items: center;">
                 <span class="navbar-toggler-icon"></span>
                 <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
         </div>
-        <!-- Menu hamburhuer -->
+         Menu hamburhuer
         </button>
-        <!-- Navegação -->
+        Navegação
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
@@ -60,9 +71,9 @@
             </ul>
         </div>
 
-    </nav>
+    </nav> -->
 
-
+   
 
     <section>
         <div class="leftBox">
