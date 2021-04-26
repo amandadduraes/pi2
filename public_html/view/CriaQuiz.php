@@ -21,17 +21,23 @@
     
     
     <?php
-    session_start();
-    include_once "navBar.php";
-    include_once "../model/Usuario.php";
-    session_start();
-    $usuario = $_SESSION["user"];
-    if($usuario->perfil == 'professor'){
+include_once "navBar.php";
+include_once "../model/Usuario.php";
+session_start();
+
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user"];
+
+if($usuario->perfil == 'professor'){
     navProfessor();
-    }else{
+}else{
     navAluno();
-    }
-    ?>
+}
+?>
     
     <!-- Os campos aparecerão aqui -->
     <form method="POST" action="../controller/Quiz.php" role="form">

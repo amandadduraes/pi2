@@ -51,7 +51,7 @@ function navAluno(){
       </ul>
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">
+          <a class="nav-link" href="../controller/LoginController.php?deslogar=1">
             <i class="fa fa-sign-out"></i>
             Sair
           </a>
@@ -128,7 +128,7 @@ function navProfessor(){
       </ul>
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">
+          <a class="nav-link" href="../controller/LoginController.php?deslogar=1">
             <i class="fa fa-sign-out"></i>
             Sair
           </a>

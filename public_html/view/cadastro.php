@@ -11,6 +11,56 @@
     <link rel="stylesheet" type="text/css" href="../Assets/css/cadastro.css">
     <script type="text/javascript" src="../Bibliotecas/jquery/jquery.min.js"></script>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+          $('#cadastrar').submit(function(e) {
+            e.preventDefault();
+            var nome = $("#nome").val();
+            var email = $("#email").val();
+            var senha = $("#senha").val();
+            var instituicao = $("#instituicao").val();
+            var perfil = $("#perfil").val();
+
+            if(senha.length < 5) {
+               alert("O campo senha deve conter no mínimo 5 caracteres!")
+               return;
+            }
+
+            $.ajax({
+               type: "POST",
+               url: "../controller/UsuarioController.php",
+               data: {
+                  save: 1,
+                  nome,
+                  email,
+                  senha,
+                  instituicao,
+                  perfil
+               }, 
+               success: function(data) {
+                  var value=JSON.parse(data)
+                  if (value.error)
+                  {
+                     alert("E-mail já cadastrado!")
+                     return
+                  }
+                  alert(
+                     data 
+                        ? "Cadastro efetuado com sucesso!"
+                        : "Erro ao realizar cadastro!"
+                  )
+
+                  location.href="./login.php"
+               },
+               error: function (data) {
+                  alert("Erro inesperado, tente novamente!")
+                  console.log(data)
+               }
+            })
+          })
+      })
+     </script>
 
 </head>
 

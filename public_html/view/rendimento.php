@@ -9,25 +9,31 @@
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
 
     <title>Atividades Teóricas</title>
-
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
 </head>
 
 <body> 
-<script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-<script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-<script scr="../Bibliotecas/jquery/jquery.min.js"></script>
-    <?php
-    include_once "navBar.php";
-    include_once "../model/Usuario.php";
-    session_start();
-    $usuario = $_SESSION["user"];
-    if($usuario->perfil == 'professor'){
+
+<?php
+include_once "navBar.php";
+include_once "../model/Usuario.php";
+session_start();
+
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user"];
+
+if($usuario->perfil == 'professor'){
     navProfessor();
-    }else{
+}else{
     navAluno();
-    }
-    ?>
-    
+}
+?>
     <div id="wrapper">
         <h1>Rank Geral</h1>
 

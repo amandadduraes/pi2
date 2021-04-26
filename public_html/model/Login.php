@@ -2,9 +2,6 @@
     require_once(__DIR__."/Conexao1.php");
     require_once(__DIR__."/Usuario.php");
 
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-
     class Login{
     public static function verificaUsuario($email, $senha){
     $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php

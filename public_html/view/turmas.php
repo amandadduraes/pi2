@@ -19,14 +19,23 @@
 <body>
     
 <?php
-    session_start();
-    include_once "navBar.php";
-    if($_SESSION["user"] == 'professor'){
+include_once "navBar.php";
+include_once "../model/Usuario.php";
+session_start();
+
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user"];
+
+if($usuario->perfil == 'professor'){
     navProfessor();
-    }else{
+}else{
     navAluno();
-    }
-    ?>
+}
+?>
     <div class="container">
         <div class="row">
             <div class="one-third col-md-4"> <a href="#" class="img-caption">

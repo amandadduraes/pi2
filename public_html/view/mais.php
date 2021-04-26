@@ -11,15 +11,24 @@
 
 <body>
 
-    <?php
-        session_start();
-        include_once "navBar.php";
-        if($_SESSION["user"] == 'professor'){
-        navProfessor();
-        }else{
-        navAluno();
-        }
-    ?>
+<?php
+include_once "navBar.php";
+include_once "../model/Usuario.php";
+session_start();
+
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user"];
+
+if($usuario->perfil == 'professor'){
+    navProfessor();
+}else{
+    navAluno();
+}
+?>
    
     <div class="container-teste">
         <span class="big-circle"></span>

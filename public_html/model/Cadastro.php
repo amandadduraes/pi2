@@ -3,6 +3,7 @@
 
 require_once(__DIR__."/Conexao1.php");
 
+
 $arrdeveter = [
     "nome",
     "email",
@@ -28,6 +29,7 @@ $arrdeveter = [
     $perfil=$_POST["perfil"];
   }
   
+    
           $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php
 
 

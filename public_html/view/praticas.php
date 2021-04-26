@@ -8,25 +8,32 @@
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
     <title>Atividades Práticas</title>
-
+    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../Bibliotecas/popper.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<script scr="../Bibliotecas/jquery/jquery.min.js"></script>
-<script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-<script src="../Bibliotecas/popper.min.js"></script>
-<script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <?php
-    include_once "navBar.php";
-    include_once "../model/Usuario.php";
-    session_start();
-    $usuario = $_SESSION["user"];
-    if($usuario->perfil == 'professor'){
+
+<?php
+include_once "navBar.php";
+include_once "../model/Usuario.php";
+session_start();
+
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user"];
+
+if($usuario->perfil == 'professor'){
     navProfessor();
-    }else{
+}else{
     navAluno();
-    }
-    ?>
+}
+?>
     <section>
         <div class="leftBox">
             <div class="content">
