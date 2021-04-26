@@ -13,10 +13,8 @@
 </head>
 
 <body>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
-    </script>
-    <script src="../Bibliotecas/popper.min.js">
-    </script>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../Bibliotecas/popper.min.js"></script>
     <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
     <script src="../Assets/js/CriaQuiz.js"></script>
@@ -25,12 +23,16 @@
     <?php
     session_start();
     include_once "navBar.php";
-    if($_SESSION["user"] == 'professor'){
+    include_once "../model/Usuario.php";
+    session_start();
+    $usuario = $_SESSION["user"];
+    if($usuario->perfil == 'professor'){
     navProfessor();
     }else{
     navAluno();
     }
     ?>
+    
     <!-- Os campos aparecerão aqui -->
     <form method="POST" action="../controller/Quiz.php" role="form">
         <input type="hidden" name="acao" value="inserir">

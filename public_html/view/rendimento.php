@@ -4,20 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script src="../Bibliotecas/jquery/jquery.min.js"></script>
-    <!--Bootstrap Versão 4.1.3  -->
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Assets/css/rendimento.css">
+    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
 
     <title>Atividades Teóricas</title>
 
 </head>
 
-<body>
-   
-<?php
-    session_start();
+<body> 
+<script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script scr="../Bibliotecas/jquery/jquery.min.js"></script>
+    <?php
     include_once "navBar.php";
-    if($_SESSION["user"] == 'professor'){
+    include_once "../model/Usuario.php";
+    session_start();
+    $usuario = $_SESSION["user"];
+    if($usuario->perfil == 'professor'){
     navProfessor();
     }else{
     navAluno();
@@ -37,7 +41,7 @@
             <tbody>
                 <tr>
                 <?php
-    include("../model/conexao.php");
+    include("../model/Conexao1.php");
     $stmt = $PDO->query("select * from usuario order by pontuacao desc");
     while ($row = $stmt->fetch()) {?>
                     <td class="lalign"><?=$row["email"]?></td>
@@ -47,15 +51,7 @@
             </tbody>
         </table>
     </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
-    </script>
-    <script src="../Bibliotecas/popper.min.js">
-    </script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+  
 </body>
 
 </html>
