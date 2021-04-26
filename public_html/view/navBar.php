@@ -18,13 +18,13 @@ function navAluno(){
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="videos.php>
             <i class="fa fa-youtube-play"></i>
             Video Aulas
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="turmas.php">
             <i class="fa fa-font-awesome"></i>
             Matérias
           </a>
@@ -35,9 +35,9 @@ function navAluno(){
             Atividades
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Atividades Práticas <i class="fa fa-laptop "></i> </a>
+            <a class="dropdown-item" href="praticas.php">Atividades Práticas <i class="fa fa-laptop "></i> </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Atividades Teóricas <i class="fa fa-book"></i> </a>
+            <a class="dropdown-item" href="atividades.php">Atividades Teóricas <i class="fa fa-book"></i> </a>
           </div>
         </li>
       </ul>

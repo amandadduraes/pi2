@@ -1,5 +1,6 @@
 <?php
 
+
 require_once(__DIR__."/Conexao1.php");
 
 $arrdeveter = [
@@ -44,7 +45,7 @@ $arrdeveter = [
               if($sql->rowCount() > 0) {
                   echo"Nova tupla inserida com sucesso!";
 
-                  header("../view/cadastro.php");
+                 
                   
               } else{
               echo"Erro ao tentar efetivar cadastro";
@@ -54,7 +55,7 @@ $arrdeveter = [
             
             
   
-      
+          
    
 
 ?>

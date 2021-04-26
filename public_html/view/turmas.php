@@ -9,26 +9,34 @@
     <link rel="stylesheet" href="../Assets/css/Turmas.css">
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
 
-    <title>Document</title>
+    <title>Turmas</title>
+    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"> </script>
+    <script src="../Bibliotecas/popper.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
 </head>
 
 <body>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
-    </script>
-    <script src="../Bibliotecas/popper.min.js">
-    </script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
-    <nav class="navbar  navbar-dark bg-info">
+    
+<?php
+    session_start();
+    include_once "navBar.php";
+    if($_SESSION["user"] == 'professor'){
+    navProfessor();
+    }else{
+    navAluno();
+    }
+    ?>
+    <!--<nav class="navbar  navbar-dark bg-info">
         <div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"
                 style="display: flex; align-items: center;">
                 <span class="navbar-toggler-icon"></span>
                 <a href="" class="navbar-brand text-white" style="margin-left: 12px;">0 AO 1</a>
         </div>
-        <!-- Menu hamburhuer -->
+     Menu hamburhuer 
         </button>
-        <!-- Navegação -->
+        Navega
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
@@ -67,7 +75,7 @@
         </div>
 
     </nav>
-
+-->
     <div class="container">
         <div class="row">
             <div class="one-third col-md-4"> <a href="#" class="img-caption">
