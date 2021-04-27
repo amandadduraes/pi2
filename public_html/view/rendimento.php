@@ -15,20 +15,16 @@
 </head>
 
 <body> 
-
-<?php
-include_once "navBar.php";
-include_once "../model/Usuario.php";
-session_start();
-
-
-if(!isset($_SESSION["user"])){
-    header("Location: ../index.php");
-}
-
-$usuario = $_SESSION["user"];
-
-if($usuario->perfil == 'professor'){
+<script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script scr="../Bibliotecas/jquery/jquery.min.js"></script>
+    <?php
+    include_once "navBar.php";
+    include "../model/Conexao1.php";
+    include_once "../model/Usuario.php";
+    session_start();
+    $usuario = $_SESSION["user"];
+    if($usuario->perfil == 'professor'){
     navProfessor();
 }else{
     navAluno();
@@ -47,9 +43,9 @@ if($usuario->perfil == 'professor'){
             <tbody>
                 <tr>
                 <?php
-    include("../model/Conexao1.php");
-    $stmt = $PDO->query("select * from usuario order by pontuacao desc");
-    while ($row = $stmt->fetch()) {?>
+                    $PDO = Conexao::getConexao();
+                    $stmt = $PDO->query("select * from usuario order by pontuacao desc");
+                    while ($row = $stmt->fetch()) {?>
                     <td class="lalign"><?=$row["email"]?></td>
                     <td><?=$row["pontuacao"]?></td>
                 </tr>

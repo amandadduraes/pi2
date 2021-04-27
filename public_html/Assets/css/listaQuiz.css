@@ -1,0 +1,17 @@
+body{
+  background-color:#c8e6ff;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(85, 184, 241);
+  border-radius: 5px;
+}
+.centraliza{
+  text-align: center;
+}

@@ -112,7 +112,7 @@ function navProfessor(){
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="CriaQuiz.php">Cria Quiz <i class="fa fa-plus"></i> </a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="atividades.php">Gerencia Quiz <i class="fa fa-minus"></i> </a>
+      <a class="dropdown-item" href="listaQuiz.php">Gerencia Quiz <i class="fa fa-minus"></i> </a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="praticas.php">Gerencia Turma <i class="fa fa-users"></i> </a>
     </div>
