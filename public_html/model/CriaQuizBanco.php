@@ -84,4 +84,5 @@ function criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alter
             }
         }
 }
+
 ?>
