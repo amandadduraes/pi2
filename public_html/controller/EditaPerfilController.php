@@ -21,7 +21,7 @@
 
         editaPerfil($nome, $senha, $instituicao, $email);
 
-        header("location : ../view/EditaPerfil.php");
+        header("Location: ../view/EditaPerfil.php");
     }
 
 ?>
