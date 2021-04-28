@@ -60,7 +60,14 @@
                         <div class="row">
                             <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" class="tex">Código da turma:</label>
-                                <input name="turma" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                                <select name="turma" id="nome" class="browser-default custom-select">
+                                    <option value="" disabled selected>Categoria</option>
+                                    <?php
+                                    $stmt = $PDO->query("select nome, codigo from turma where professor_email = '$usuario->email'");
+                                    while ($campo = $stmt->fetch()) { ?>
+                                        <option value="<?=$campo["codigo"] ?>"><?=$campo["nome"] ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
