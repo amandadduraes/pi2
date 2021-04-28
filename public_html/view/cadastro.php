@@ -1,15 +1,17 @@
 <html>
 
-<head>
-    
+<head>    
     <title>Cadastro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="../Assets/css/cadastro.css">
-    <script type="text/javascript" src="../Bibliotecas/jquery/jquery.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../Bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../Bibliotecas/popper.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+        
 
     <script type="text/javascript">
 
@@ -72,7 +74,7 @@
         </div>
         <div class="wrap-signup">
 
-            <form id="cadastrar" class="signup-form" name="cadastro" method="POST" action="../model/Cadastro.php"> 
+            <form id="cadastrar" class="signup-form" name="cadastro" method="POST"> 
                 <span class="signup-form-title text-info"> Cadastrar</span>
                 <a href="login.php" class="link-to-login text-info "> Já é cadastrado? Clique aqui para fazer login.</a>
                 <div class="wrap-input">
@@ -109,12 +111,6 @@
         </div>
     </div>
 </body>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js">
-</script>
-<script src="../Bibliotecas/popper.min.js">
-</script>
-<script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+
 
 </html>

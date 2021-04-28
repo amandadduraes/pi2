@@ -2,7 +2,7 @@
 
  //Função para redirecionar o usuário assim que o mesmo fazer cadastro.
  require_once (__DIR__."./../model/Usuario.php");
- require_once (__DIR__."./../dao/UsuarioDAO.php");
+ require_once (__DIR__."./../model/Cadastro.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(array_key_exists("save", $_POST)) {
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$instituicao = filter_input (INPUT_POST, 'instituicao', FILTER_SANITIZE_STRING);
 		$perfil = filter_input (INPUT_POST, 'perfil', FILTER_SANITIZE_STRING);
 
-		if(UsuarioDAO::buscarUsuarioEmail($email)){
+		if(Cadastro::buscarUsuarioEmail($email)){
 			echo json_encode(array("error"=>true));
 			return;
 		}
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$novoUsuario->instituicao = $instituicao;
 		$novoUsuario->perfil = $perfil;
 
-		$aux = UsuarioDAO::criarUsuario($novoUsuario);
+		$aux = Cadastro::criarUsuario($novoUsuario);
 		echo json_encode($aux);
 	}
 	

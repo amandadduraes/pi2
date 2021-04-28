@@ -1,10 +1,12 @@
 <?php
 
 
-require_once(__DIR__."/Conexao1.php");
+require_once(__DIR__."./Conexao1.php");
+class Cadastro{
 
 
-$arrdeveter = [
+public static function fazerCadastro(){
+  $arrdeveter = [
     "nome",
     "email",
     "senha",
@@ -29,35 +31,74 @@ $arrdeveter = [
     $perfil=$_POST["perfil"];
   }
   
+$PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php
+
+
+    $sql= "INSERT INTO usuario(nome,email,senha, instituicao,perfil) VALUES (?, ?, ?,?,?)";
+
     
-          $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php
+    $sql= $PDO->prepare($sql);
+    $sql->bindParam(1, $nome);
+    $sql->bindParam(2, $email);
+    $sql->bindParam(3, $senha);
+    $sql->bindParam(4, $instituicao);
+    $sql->bindParam(5, $perfil);
 
+    if ($sql->execute()){
+    if($sql->rowCount() > 0) {
+        echo"Nova tupla inserida com sucesso!";                
+        
+    } else{
+    echo"Erro ao tentar efetivar cadastro";
+}
 
-              $sql= "INSERT INTO usuario(nome,email,senha, instituicao,perfil) VALUES (?, ?, ?,?,?)";
+  } 
+}
+           
+public static function buscarUsuarioEmail($email){
+try{
+  $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php;
 
-              
-              $sql= $PDO->prepare($sql);
-              $sql->bindParam(1, $nome);
-              $sql->bindParam(2, $email);
-              $sql->bindParam(3, $senha);
-              $sql->bindParam(4, $instituicao);
-              $sql->bindParam(5, $perfil);
-  
-             if ($sql->execute()){
-              if($sql->rowCount() > 0) {
-                  echo"Nova tupla inserida com sucesso!";
+    $sql = $PDO->prepare("SELECT * FROM usuario WHERE email = ?");
+    $sql->bindValue(1,$email);
 
-                 
-                  
-              } else{
-              echo"Erro ao tentar efetivar cadastro";
-          }
+    $res = $sql->execute();
 
-           }
-            
-            
-  
-          
+    if ($res == 1 ) {
+        if ($sql->rowCount() > 0) {
+            $dados = $sql->fetch();
+            $usuario = new Usuario();
+            $usuario->carregarObjetoDoBancoDeDados($dados);
+            return $usuario;
+        }
+        else return NULL;
+    }
+}
+catch (Exception $e){
+    echo $e->getMessage();
+}    
+}
+
+public static function criarUsuario( Usuario $novoUsuario ) {
+  try {
+      $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php;
+
+      $sql = $PDO->prepare("INSERT INTO usuario(email, senha, nome, instituicao, perfil) VALUES (?, ?, ?, ?, ?)");
+      $sql->bindValue(1, $novoUsuario->email);
+      $sql->bindValue(2, $novoUsuario->senha);
+      $sql->bindValue(3, $novoUsuario->nome);
+      $sql->bindValue(4, $novoUsuario->instituicao);
+      $sql->bindValue(5, $novoUsuario->perfil);
+
+      $res = $sql->execute();
+      
+      return $res;
+  } catch(Exeption $e) {
+      echo $e;
+      $sql->debugDumpParams();
+  }
+}
+          }  
    
 
 ?>
