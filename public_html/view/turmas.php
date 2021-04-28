@@ -13,7 +13,6 @@
     <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"> </script>
     <script src="../Bibliotecas/popper.min.js"></script>
     <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
 </head>
 
 <body>

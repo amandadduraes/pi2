@@ -28,12 +28,13 @@
             $desc_atv = $_POST["descricao"];
             $tipo = $_POST["tipo"];
             $turma = $_POST["turma"];
+
             $PDO = Conexao::getConexao();
             criaAtividade($desc_atv, $turma, $tipo, $PDO);
 
             $contaTam=$_POST["pergunta"];
             
-
+            $id_atv = $PDO->lastInsertId();
             for($i = 0; $i < count($contaTam); $i++){
                 $alternativasCorretas = $_POST["correta"][$i];
                 $perguntas = $_POST["pergunta"][$i];
@@ -64,20 +65,12 @@
                     $alt3 = "errado";
                     $alt4 = "certo";
                 }
-                
-                $id_atv = $PDO->lastInsertId(); 
-                // echo "---$id_atv---"; 
-                // echo "$alt1--$alt2--$alt3--$alt4";
                 criaPergunta($perguntas, $id_atv, $PDO);
                 $id_pergunta = $PDO->lastInsertId();
-                // echo "---$id_pergunta---";
-
                 criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alternativasD, $alt1, $alt2, $alt3, $alt4, $id_pergunta, $PDO);
             }
-            
-            
-    
-    
+            echo '<script>alert("Quiz criado com sucesso!!");</script>';
+            header("Location: ../view/CriaQuiz.php");
         }
     }
 ?>

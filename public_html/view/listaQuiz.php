@@ -8,13 +8,10 @@
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Assets/css/listaQuiz.css">
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <!-- <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../Bibliotecas/dataTables/jquery.dataTables.min.css">
+    <script src="../Bibliotecas/jquery/googleapis-jquery.min.js"></script>
     <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    
-    <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="../Bibliotecas/dataTables/jquery.dataTables.min.js"></script>
     <script src="../Assets/js/listaQuiz.js"></script>
     <script>
     $(document).ready(function() {
@@ -23,7 +20,6 @@
     </script>
     <title>Lista Quiz</title>
 </head>
-
 <body>
     <?php
     include "../model/Conexao1.php";
@@ -72,5 +68,4 @@
         </div>
     </form>
 </body>
-
 </html>

@@ -3,33 +3,26 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../Assets/css/teorica.css">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="."></script>
+    <link rel="stylesheet" type="text/css" href="../Assets/css/teorica.css">
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="../Assets/css/navBar.css"> -->
     <title>Atividades Teóricas</title>
-
 </head>
 
 <body>
-<script scr="../Bibliotecas/jquery/jquery.min.js"></script>
 <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
 <script src="../Bibliotecas/popper.min.js"></script>
 <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script src="."></script>
 <?php
 include_once "navBar.php";
 include_once "../model/Usuario.php";
 session_start();
-
-
 if(!isset($_SESSION["user"])){
     header("Location: ../index.php");
 }
-
 $usuario = $_SESSION["user"];
-
 if($usuario->perfil == 'professor'){
     navProfessor();
 }else{
@@ -40,7 +33,6 @@ if($usuario->perfil == 'professor'){
         <div class="leftBox">
             <div class="content">
                 <h1 class="text-info">Atividades Teóricas</h1>
-
             </div>
         </div>
         <div class="events">
@@ -54,7 +46,6 @@ if($usuario->perfil == 'professor'){
                         <p>Este quiz tem como finalidade testar o conhecimento dos alunos sobre Objeto.</p>
                         <a class="text-info" href="perguntas.php">Iniciar Quiz</a>
                     </div>
-
                 </li>
                 <li>
                     <div class="time">
