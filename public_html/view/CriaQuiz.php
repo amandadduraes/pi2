@@ -31,7 +31,7 @@
     }
     ?>
     <!-- Os campos aparecerão aqui -->
-    <form method="POST" action="../controller/CriaQuizController.php" role="form">
+    <form id="form1" method="POST" action="../controller/CriaQuizController.php" role="form">
         <input type="hidden" name="acao" value="inserir">
         <div id="Questoes" class="Questoes col-12 p-5">
             <div class="d-flex p-5">

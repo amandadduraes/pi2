@@ -20,6 +20,7 @@
     </script>
     <title>Lista Quiz</title>
 </head>
+
 <body>
     <?php
     include "../model/Conexao1.php";
@@ -33,9 +34,8 @@
     navAluno();
     }
     ?>
-    <form method="post" action="../controller/listaBancoController.php" id="form">
-    <input type="hidden" name="id" id="idDel" value="">
-        <div class="container">
+        <div class="container p-2">
+        <small id="prin" style="display: none; color: red;" class="pb-2"></small>
             <table id="example" class="display">
                 <thead>
                     <tr>
@@ -52,20 +52,20 @@
                             while ($row = $stmt->fetch()) {
                         ?>
                         <td class="centraliza">
-                            <button type="button" onclick="mudaIDdelete(<?=$row['id']?>)" class="btn btn-danger"><em
+                            <button type="button" onclick="mudaIDdelete(<?=$row['id']?>,this)" class="btn btn-danger"><em
                                     class="fa fa-trash"></em></button>
                         </td>
                         <th>
-                        <?=$row['id']?>
+                            <?=$row['id']?>
                         </th>
                         <th>
-                        <?=$row['descricao']?>
+                            <?=$row['descricao']?>
                         </th>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
         </div>
-    </form>
 </body>
+
 </html>

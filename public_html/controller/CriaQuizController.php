@@ -69,8 +69,8 @@
                 $id_pergunta = $PDO->lastInsertId();
                 criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alternativasD, $alt1, $alt2, $alt3, $alt4, $id_pergunta, $PDO);
             }
-            echo '<script>alert("Quiz criado com sucesso!!");</script>';
-            header("Location: ../view/CriaQuiz.php");
+            // echo '<script>alert("Quiz criado com sucesso!!");</script>';
+            // header("Location: ../view/CriaQuiz.php");
         }
     }
 ?>
