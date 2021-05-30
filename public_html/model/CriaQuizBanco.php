@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 function criaAtividade($desc_atv, $turma, $tipo, $PDO){
     try{
     $sql = "insert into atividade (descricao, turma_codigo, id_tipo) values (?,?,?)";
@@ -9,7 +10,11 @@ function criaAtividade($desc_atv, $turma, $tipo, $PDO){
     $stmt->execute();
     }catch(PDOException $erro){
         error_log(print_r($erro->getMessage(),1));
-        echo '<script>alert("Erro ao Criar atividade: Avise um administrador!!\n");</script>';
+    }
+    if($stmt->rowCount() >= 1){
+        echo json_encode('Atividade Criada com sucesso!');
+    }else{
+        echo json_encode('Falha ao criar a atividade!');
     }
 }
 function criaPergunta($questao, $atv_id, $PDO){
@@ -23,8 +28,7 @@ function criaPergunta($questao, $atv_id, $PDO){
     $stmt->execute();
     }catch(PDOException $erro){
         error_log(print_r($erro->getMessage(),1));
-        echo '<script>alert("Erro ao Criar a pregunta:\n'.$questao.'\n Avise um administrador!!\n");</script>';
-    }        
+    }    
 }
 function criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alternativasD, $alt1, $alt2, $alt3, $alt4, $id_pergunta, $PDO){
     try{
@@ -58,7 +62,6 @@ function criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alter
     $stmtD->execute();
     }catch(PDOException $erro){
         error_log(print_r($erro->getMessage(),1));
-        echo '<script>alert("Erro ao Criar as alternativas: Avise um administrador!!\n");</script>';
     }   
 }
 ?>
