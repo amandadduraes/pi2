@@ -93,7 +93,7 @@ public static function criarUsuario( Usuario $novoUsuario ) {
       $res = $sql->execute();
       
       return $res;
-  } catch(Exeption $e) {
+  } catch(Exception $e) {
       echo $e;
       $sql->debugDumpParams();
   }

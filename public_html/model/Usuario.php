@@ -14,8 +14,5 @@ class Usuario {
         $this->perfil = $tupla["perfil"];
         $this->instituicao = $tupla["instituicao"];
     }
-
-
 }
-
 ?>

@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Assets/css/EditaPerfil.css">
     <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="../Bibliotecas/popper.min.js"></script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script scr="../Bibliotecas/jquery/jquery.min.js"></script>
 
     <!-- No evento document.ready realizar chamada Ajax para logincontroller.php buscando quem é o usuário logado
     Se retornar sucesso carregar dados retornados no formulário -->
@@ -20,29 +16,11 @@
 </head>
 
 <body>
+    <script src="../Bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../Assets/js/EditaPerfil.js"></script>
+
     <?php
-$arrdeveter = [
-  "nome",
-  "email",
-  "Instituição",
-];
-// print_r($_POST);
-$erro = false;
-foreach($arrdeveter as $dev){
-if(!isset($_POST[$dev])){
-$erro = true;
-// echo "<br>".$dev;
-}
-}
-// echo "<br>".$erro;
-if(!$erro){
-  $nome=$_POST["nome"];
-  $email = $_POST["email"];
-  $Instituição = $_POST["Instituição"];
-}
-?>
-    
-<?php
 include_once "navBar.php";
 include_once "../model/Usuario.php";
 session_start();
@@ -60,23 +38,30 @@ if($usuario->perfil == 'professor'){
     navAluno();
 }
 ?>
-    <form method="POST" action="../controller/EditaPerfilController.php" enctype='multipart/form-data' class="col-10">
-        <div class="container">
-        <input type="hidden" name="email" value='<?=$usuario->email?>'>
+    <form id="form1" method="POST" action="" class="col-12">
+        <div id="prin" class="container">
+            <input type="hidden" id="email" name="email" value='<?=$usuario->email?>'>
             <div class="col-12 d-flex p-5">
                 <div class="col-7 mx-auto">
-                    <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required value='<?=$usuario->nome?>'>
+                    <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required
+                            value='<?=$usuario->nome?>'>
                         <label class="form-control-placeholder" for="nome">Nome</label>
                     </div>
-                    <div class="form-group"> <input type="password" id="email" name="senha" class="form-control" required>
+                    <div class="form-group"> <input type="password" id="senha" name="senha" class="form-control"
+                            required>
                         <label class="form-control-placeholder" for="senha">Senha</label>
                     </div>
-                   
-                        <div class="form-group"> <input type="text" id="Instituição" name="instituicao" class="form-control"
-                                required value='<?=$usuario->instituicao?>'> <label class="form-control-placeholder" for="Instituição">Instituição</label>
+
+                    <div class="form-group"> <input type="text" id="Instituição" name="instituicao" class="form-control"
+                            required value='<?=$usuario->instituicao?>'> <label class="form-control-placeholder"
+                            for="Instituição">Instituição</label>
                     </div>
-            
-        <p> <input type="submit" value="Atualizar Perfil" class="btn btn-lg btn-primary" /> </p>
+
+                    <p> <input id="bntAtualiza" type="button" value="Atualizar Perfil" class="btn btn-lg btn-primary" />
+                    </p>
+                </div>
+            </div>
+        </div>
     </form>
 
 </body>
