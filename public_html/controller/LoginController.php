@@ -5,7 +5,7 @@ require_once (__DIR__."./../model/Login.php");
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 	if(array_key_exists("deslogar",$_GET)) {
-		session_start();
+		
 		session_destroy();
 
 		header("Location: ../index.php");		

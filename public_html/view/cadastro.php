@@ -89,13 +89,12 @@
                 </div>
                 <div class="wrap-input">
                     <span class="lable-iput">Senha</span>
-                    <input type="password" class="input" name="senha" placeholder="Senha" id="senha" required>
+                    <input type="password" class="input" name="senha" placeholder="Senha" id="senha" required >
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input">
                     <span class="lable-iput">Instituição de Ensino</span>
-                    <input type="text" class="input" name="instituicao" placeholder="Instituição de Ensino"
-                        id="instituicao" required>
+                    <input type="text" class="input" name="instituicao" placeholder="Instituição de Ensino"id="instituicao" required maxlength="128">
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input">

@@ -72,8 +72,8 @@ if($usuario->perfil == 'professor'){
                         <label class="form-control-placeholder" for="senha">Senha</label>
                     </div>
                    
-                    <div class="form-group"> <input type="text" id="Instituição" name="instituicao" class="form-control"
-                            required value='<?=$usuario->instituicao?>'> <label class="form-control-placeholder" for="Instituição">Instituição</label>
+                        <div class="form-group"> <input type="text" id="Instituição" name="instituicao" class="form-control"
+                                required value='<?=$usuario->instituicao?>'> <label class="form-control-placeholder" for="Instituição">Instituição</label>
                     </div>
             
         <p> <input type="submit" value="Atualizar Perfil" class="btn btn-lg btn-primary" /> </p>

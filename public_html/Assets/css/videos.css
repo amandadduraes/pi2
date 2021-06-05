@@ -49,59 +49,59 @@ body
     overflow: auto;
 }
 
-.container-esquerda {
-    width: 50%;
-    padding: 20px;
-    background: url("../img/video.svg") no-repeat;
-    background-size: contain;
-    background-origin: content-box;
-}
+    .container-esquerda {
+        width: 50%;
+        padding: 20px;
+        background: url("../img/video.svg") no-repeat;
+        background-size: contain;
+        background-origin: content-box;
+    }
 
-.container-teste h1
-{
-    padding: 60px 0;
-    font-size: 44px;
-    text-align: center;
-    font-family: 'DancingScript-VariableFont_wght';
-}
-.row
-{
-    display: flex ;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.col
-{
-    flex-basis: 50%;
-    min-width: 250px;
-}
-.feature-img
-{
-    width: 100%;
-    margin: auto;
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-}
-.small-img-row
-{
-    display: flex;
-    margin: 20px 0;
-    background-color: white;
-    align-items: center;
-    border-radius: 6px;
-    overflow: hidden;
-    width: 85%;
-}
-.small-img
-{
-    position: relative;
-}
+    .container-teste h1
+    {
+        padding: 60px 0;
+        font-size: 44px;
+        text-align: center;
+        font-family: 'DancingScript-VariableFont_wght';
+    }
+    .row
+    {
+        display: flex ;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .col
+    {
+        flex-basis: 50%;
+        min-width: 250px;
+    }
+    .feature-img
+    {
+        width: 100%;
+        margin: auto;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .small-img-row
+    {
+        display: flex;
+        margin: 20px 0;
+        background-color: white;
+        align-items: center;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 85%;
+    }
+    .small-img
+    {
+        position: relative;
+    }
 
-.small-img-row p
-{
-    margin-left: 20px;
-    line-height: 22px;
-    font-size: 15px;
-    font-weight: bold;
-}
+    .small-img-row p
+    {
+        margin-left: 20px;
+        line-height: 22px;
+        font-size: 15px;
+        font-weight: bold;
+    }

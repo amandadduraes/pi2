@@ -1,7 +1,11 @@
 <?php
+
+
     require_once("../model/editaPerfil.php");
     include_once "../model/Usuario.php";
+    require_once("../model/Cadastro.php");
 
+    session_start();
 
     $array = ["nome", "senha", "instituicao"];
 
@@ -20,6 +24,9 @@
         $email=$_POST["email"];
 
         editaPerfil($nome, $senha, $instituicao, $email);
+
+        $usuario = Cadastro::buscarUsuarioEmail($email);
+        $_SESSION["user"] = $usuario;
 
         header("Location:../view/EditaPerfil.php");
         
