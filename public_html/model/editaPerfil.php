@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__."/Conexao1.php");
 header('Content-Type: application/json');
-function editaPerfil($nome, $senha, $instituicao, $email){
+function edita-perfil($nome, $senha, $instituicao, $email){
 
     $PDO = Conexao::getConexao(); //Chamando a conexão criada em Conexao.php;
 	

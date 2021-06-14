@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Assets/css/EditaPerfil.css">
-    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/edita-perfil.css">
+    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
 
     <!-- No evento document.ready realizar chamada Ajax para logincontroller.php buscando quem é o usuário logado
     Se retornar sucesso carregar dados retornados no formulário -->
@@ -16,28 +16,11 @@
 </head>
 
 <body>
-    <script src="../Bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="../Assets/js/EditaPerfil.js"></script>
+    <script src="../bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/edita-perfil.js"></script>
 
-    <?php
-include_once "navBar.php";
-include_once "../model/Usuario.php";
-session_start();
-
-
-if(!isset($_SESSION["user"])){
-    header("Location: ../index.php");
-}
-
-$usuario = $_SESSION["user"];
-
-if($usuario->perfil == 'professor'){
-    navProfessor();
-}else{
-    navAluno();
-}
-?>
+    <?php include_once "navBar.php"; ?>
     <form id="form1" method="POST" action="" class="col-12">
         <div id="prin" class="container">
             <input type="hidden" id="email" name="email" value='<?=$usuario->email?>'>

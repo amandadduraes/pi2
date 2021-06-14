@@ -2,7 +2,7 @@
 
 
     header('Content-Type: application/json');
-    require_once("../model/editaPerfil.php");
+    require_once("../model/edita-perfil.php");
     include_once "../model/Usuario.php";
     require_once("../model/Cadastro.php");
 
@@ -12,11 +12,11 @@
         $senha = $_POST['senha'];
         $instituicao = $_POST['instituicao'];
         $email = $_POST['email'];
-        editaPerfil($nome, $senha, $instituicao, $email);
+        edita-perfil($nome, $senha, $instituicao, $email);
 
         $usuario = Cadastro::buscarUsuarioEmail($email);
         $_SESSION["user"] = $usuario;
 
-        header("Location:../view/EditaPerfil.php");
+        header("Location:../view/edita-perfil.php");
         
 ?>

@@ -5,13 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../Assets/css/perguntas.css">
-    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/perguntas.css">
+    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <script src="../bibliotecas/jquery/jquery.min.js"></script>
   
+    <script>
+        let questions = [];
+
+        function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            const atividadeId = getUrlParameter('ativ')
+            $("#hiddenAtividadeId").val(atividadeId)
+
+            if(!atividadeId) {
+                alert('Erro ao encontrar atividade!')
+                return;
+            }
+            
+            $.ajax({
+                url: '../controller/QuestaoController.php',
+                type: 'GET',
+                data: {
+                    getByAtividadeId: atividadeId,
+                },
+                success: function(data) {
+                    const questoes = JSON.parse(data);
+                    const parsed = questoes.map((q, i) => ({
+                        numb: i+1,
+                        question: q.descricao,
+                        answer: q.alternativas.find((a) => a.configuracao === "certo").descricao,
+                        options: q.alternativas.map((a) => a.descricao)
+                    }));
+                    questions = parsed;
+                }
+            });
+
+
+            $("#iniciarQuiz").click(function() {
+                $.ajax({
+                    url: "../controller/UsuarioHasAtividadeController.php",
+                    method: "POST",
+                    data: {
+                        save: 1,
+                        atividadeId
+                    },
+                    success: function(data) {
+                        if(data && JSON.parse(data)) {
+                            const response = JSON.parse(data)
+
+                            if(!response.res) {
+                                console.log("Erro! Tente novamente mais tarde!")
+                            }
+                        }
+                        else {
+                            console.log("Tente novamente mais tarde!")
+                        }
+                    }
+                })
+            });
+        });
+    </script>
+
 </head>
 <body>
 
-  <img src="../Assets/img/perguntas.svg" alt="" class="wave">
+  <img src="../assets/img/perguntas.svg" alt="" class="wave">
     <!-- start Quiz button -->
     <div class="start_btn"><button>Iniciar Quiz!</button></div>
 
@@ -75,7 +147,7 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-     <script src="../Assets/js/perguntas.js"></script>
+     <script src="../assets/js/perguntas.js"></script>
 
    
 

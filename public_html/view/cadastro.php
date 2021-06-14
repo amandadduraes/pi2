@@ -4,13 +4,13 @@
     <title>Cadastro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../Assets/css/cadastro.css">
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/cadastro.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../Bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../Bibliotecas/popper.min.js"></script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../bibliotecas/jquery/jquery.min.js"></script>
+    <script src="../bibliotecas/popper.min.js"></script>
+    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
         
 
     <script type="text/javascript">
@@ -70,7 +70,7 @@
 
     <div class="container-cadastro">
         <div class="signup-more">
-            <img src="../Assets/img/cadastro.svg" alt="">
+            <img src="../assets/img/cadastro.svg" alt="">
         </div>
         <div class="wrap-signup">
 

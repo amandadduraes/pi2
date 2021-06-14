@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Assets/css/CriaQuiz.css">
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/cria-quiz.css">
     <title>Cria Quiz</title>
 </head>
 <body>
-    <script src="../Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="../Assets/js/CriaQuiz.js"></script>
-    <script src="../Bibliotecas/popper.min.js"></script>
+    <script src="../bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/cria-quiz.js"></script>
+    <script src="../bibliotecas/popper.min.js"></script>
     <?php
     include_once "navBar.php";
     include_once "../model/Usuario.php";
@@ -31,7 +31,7 @@
     }
     ?>
     <!-- Os campos aparecerão aqui -->
-    <form id="form1" method="POST" action="../controller/CriaQuizController.php" role="form">
+    <form id="form1" method="POST" action="../controller/cria-quizController.php" role="form">
         <input type="hidden" name="acao" value="inserir">
         <div id="Questoes" class="Questoes col-12 p-5">
             <div class="d-flex p-5">

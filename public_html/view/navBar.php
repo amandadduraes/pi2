@@ -1,4 +1,22 @@
 <?php
+
+include_once "../model/Usuario.php";
+
+session_start();
+
+if(!isset($_SESSION["user"])){
+  header("Location: ../index.php");
+}
+
+$usuario = $_SESSION["user_perfil"];
+
+if($usuario == 'professor'){
+  navProfessor();
+}
+else{
+  navAluno();
+}
+
 function navAluno(){
     echo '<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-info">
     <a class="navbar-brand">Do 0 Ao 1</a>
@@ -29,21 +47,16 @@ function navAluno(){
             Matérias
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item active">
+          <a class="nav-link" href="atividades.php">
             <i class="fa fa-line-chart"></i>
             Atividades
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="praticas.php">Atividades Práticas <i class="fa fa-laptop "></i> </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="atividades.php">Atividades Teóricas <i class="fa fa-book"></i> </a>
-          </div>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="EditaPerfil.php">
+          <a class="nav-link" href="edita-perfil.php">
             <i class="fa fa-cog"></i>
             Edita Perfil
           </a>
@@ -90,16 +103,11 @@ function navProfessor(){
             Matérias
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item active">
+          <a class="nav-link" href="atividades.php">
             <i class="fa fa-line-chart"></i>
             Atividades
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="praticas.php">Atividades Práticas <i class="fa fa-laptop "></i> </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="atividades.php">Atividades Teóricas <i class="fa fa-book"></i> </a>
-          </div>
         </li>
       </ul>
 
@@ -110,7 +118,7 @@ function navProfessor(){
       Configuração
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="CriaQuiz.php">Cria Quiz <i class="fa fa-plus"></i> </a>
+      <a class="dropdown-item" href="cria-quiz.php">Cria Quiz <i class="fa fa-plus"></i> </a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="listaQuiz.php">Gerencia Quiz <i class="fa fa-minus"></i> </a>
       <div class="dropdown-divider"></div>
@@ -120,7 +128,7 @@ function navProfessor(){
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="EditaPerfil.php">
+          <a class="nav-link" href="edita-perfil.php">
             <i class="fa fa-cog"></i>
             Edita Perfil
           </a>

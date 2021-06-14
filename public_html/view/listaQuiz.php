@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Assets/css/listaQuiz.css">
-    <link rel="stylesheet" href="../Bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Bibliotecas/dataTables/jquery.dataTables.min.css">
-    <script src="../Bibliotecas/jquery/googleapis-jquery.min.js"></script>
-    <script src="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="../Bibliotecas/dataTables/jquery.dataTables.min.js"></script>
-    <script src="../Assets/js/listaQuiz.js"></script>
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/listaQuiz.css">
+    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bibliotecas/dataTables/jquery.dataTables.min.css">
+    <script src="../bibliotecas/jquery/googleapis-jquery.min.js"></script>
+    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../bibliotecas/dataTables/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/listaQuiz.js"></script>
     <script>
     $(document).ready(function() {
         $('#example').DataTable();

@@ -9,9 +9,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Assets/css/login.css">
-    <script src="../Bibliotecas/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <script src="../bibliotecas/jquery/jquery.min.js"></script>
     <title>Login</title>
 
     <script>
@@ -69,7 +69,7 @@ session_start();
         })
     });
     </script>
-    <script scr="../Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script scr="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>

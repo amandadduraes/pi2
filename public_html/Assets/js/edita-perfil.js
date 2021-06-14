@@ -6,7 +6,7 @@ $(function() {
          var u_instituicao = $('#Instituição').val();
          var u_email = $('#email').val();
          $.ajax({
-             url: '../controller/EditaPerfilController.php',
+             url: '../controller/edita-perfilController.php',
              method: 'POST',
              data: {name: u_nome, senha: u_senha, instituicao: u_instituicao, email: u_email},
              dataType: 'json'
