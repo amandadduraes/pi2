@@ -1,5 +1,5 @@
 <?php
-    include("../model/cria-quizBanco.php");
+    include("../model/CriaQuizBanco.php");
     include("../model/Conexao1.php");
     $arrdeveter = [
         "pergunta",
@@ -69,7 +69,7 @@
                 $id_pergunta = $PDO->lastInsertId();
                 criaAlternativas($alternativasA, $alternativasB, $alternativasC, $alternativasD, $alt1, $alt2, $alt3, $alt4, $id_pergunta, $PDO);
             }
-            header("Location: ../view/cria-quiz.php");
+            header("Location: ../view/CriaQuiz.php");
         }
     }
 ?>

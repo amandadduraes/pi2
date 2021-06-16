@@ -3,7 +3,7 @@
 class Usuario {
     public $nome;
     public $email;
-    public $senha;
+    public $senha; 
     public $perfil;
     public $instituicao;
 
@@ -15,4 +15,3 @@ class Usuario {
         $this->instituicao = $tupla["instituicao"];
     }
 }
-?>

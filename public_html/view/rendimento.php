@@ -1,50 +1,38 @@
-<?php 
-    require_once(__DIR__."/../model/Conexao1.php");
-?>
-
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="../bibliotecas/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/rendimento.css">
-    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Rendimento</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" type="text/css" href="../assets/css/rendimento.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/main1.css">
+  <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.tablesorter.min.js"></script>
+  <script src="../assets/js/rendimento.js"></script>
 
-    <title>Atividades Teóricas</title>
-    <script src="../bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script scr="../bibliotecas/jquery/jquery.min.js"></script>
 </head>
 
 <body>
-    <?php include_once "navBar.php"; ?>
+ 
 
-    <div id="wrapper">
-        <h1>Rank Geral</h1>
+  <div id="wrapper">
+    <input type="hidden" id="turmaCodigo" value="<?php echo $_GET["turmaCodigo"]; ?>">
+    <h1 id="title"></h1>
 
-        <table id="keywords" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <th><span>Nome</span></th>
-                    <th><span>Pontuação</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <?php
-                    $PDO = Conexao::getConexao();
-                    $stmt = $PDO->query("select * from usuario order by pontuacao desc");
-                    while ($row = $stmt->fetch()) {?>
-                    <td class="lalign"><?=$row["nome"]?></td>
-                    <td><?=$row["pontuacao"]?></td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
-  
+    <table id="keywords" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th><span>Aluno</span></th>
+          <!-- append -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- append -->
+      </tbody>
+    </table>
+  </div>
 </body>
 
-</html> 
+</html>

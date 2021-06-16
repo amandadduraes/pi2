@@ -165,3 +165,8 @@ img
     padding-bottom:12px;
     text-decoration: none;
 }
+.link-to-login:hover {
+    padding-bottom:12px;
+    text-decoration: none;
+    color: #000080;
+}

@@ -1,14 +1,23 @@
-
+<?php
+    include_once "menu.php";
+    include_once "../model/Usuario.php";
+    session_start();
+    
+    if (!isset($_SESSION["user"])) {
+        header("Location: ../index.php");
+    }
+    
+    $usuario = $_SESSION["user_perfil"];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../assets/css/perguntas.css">
-    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <script src="../bibliotecas/jquery/jquery.min.js"></script>
-  
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   
     <script>
         let questions = [];
 
@@ -47,7 +56,7 @@
                     const parsed = questoes.map((q, i) => ({
                         numb: i+1,
                         question: q.descricao,
-                        answer: q.alternativas.find((a) => a.configuracao === "certo").descricao,
+                        answer: q.alternativas.find((a) => a.id === q.alternativa_correta_id).descricao,
                         options: q.alternativas.map((a) => a.descricao)
                     }));
                     questions = parsed;
@@ -79,17 +88,20 @@
             });
         });
     </script>
-
 </head>
 <body>
-
-  <img src="../assets/img/perguntas.svg" alt="" class="wave">
+    <input type="hidden" id="hiddenAtividadeId">
+  <img src="../assets/img/teste.svg" alt="" class="wave">
     <!-- start Quiz button -->
-    <div class="start_btn"><button>Iniciar Quiz!</button></div>
+    <div class="centralizar">
+        <div class="start_btn">
+            <button>Iniciar Quiz!</button>
+        </div>
+    </div>
 
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>Intruções e Regras</span></div>
+        <div class="info-title"><span>Instruções e Regras</span></div>
         <div class="info-list">
             <div class="info">1. O aluno terá <span>80 segundos</span> para cada questão.</div>
             <div class="info">2. Uma vez que a resposta for selecionada, não é possível desfazer.</div>
@@ -98,15 +110,18 @@
             <div class="info">5. Ao finalizar o rendimento do aluno será exibido.</div>
         </div>
         <div class="buttons">
-            <button class="quit">Sair</button>
-            <button class="restart">Continuar</button>
+            <button class="quit">Cancelar</button>
+            <button id="iniciarQuiz" class="restart">Continuar</button>
         </div>
     </div>
+
+    <body>
+       
 
     <!-- Quiz Box -->
     <div class="quiz_box">
         <header>
-            <div class="title">Objeto</div>
+            <div class="title"></div>
             <div class="timer">
                 <div class="time_left_txt">Tempo</div>
                 <div class="timer_sec">80</div>
@@ -142,15 +157,12 @@
         </div>
         <div class="buttons">
             <!-- <button class="restart">Replay Quiz</button> -->
-            <button class="quit">Sair</button>
+            <button class="quit">Tentar Novamente</button>
         </div>
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
      <script src="../assets/js/perguntas.js"></script>
-
-   
-
 </body>
 </html>
 

@@ -9,7 +9,9 @@ session_destroy();
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <meta charset="utf-8"/>
 
-  <link rel="stylesheet" href="bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+  <script src="./assets/Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+  <script src="./assets/Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>  
 </head>
 <body>
     <div class="container">
@@ -19,8 +21,8 @@ session_destroy();
         <p class=" display-2">O nosso objetivo é apoiar estudantes de Computação. 
           <br>Venha aprender com a gente!"</p>                     
 
-        <a class="btn btn-white text-info" href="view/cadastro.php" >Cadastro</a>
-        <a class="btn text-info" href="view/login.php">Login</a>
+        <a class=" btn  btn-white text-info" href="view/cadastro.php" >Cadastro</a>
+        <a class=" btn   text-info" href="view/login.php">Login</a>
       </div>
     </div>   
 </body>

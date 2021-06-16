@@ -1,19 +1,4 @@
 
-@font-face
-{
-    font-family: 'DancingScript-VariableFont_wght';
-    src: url('../fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face
-{
-    font-family: 'Poppins-SemiBold';
-    src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 *
@@ -52,7 +37,7 @@ body
     .container-esquerda {
         width: 50%;
         padding: 20px;
-        background: url("../img/video.svg") no-repeat;
+        background: url("../img/video1.svg") no-repeat;
         background-size: contain;
         background-origin: content-box;
     }
@@ -105,3 +90,75 @@ body
         font-size: 15px;
         font-weight: bold;
     }
+
+/*.container
+
+{
+    width: 80%;
+    margin: 80px auto;
+    background: url("../img/undraw_video_files_fu10.svg") no-repeat;
+}
+.container h1
+{
+    padding: 60px 0;
+    color: 	#DC143C;
+    font-size: 44px;
+    text-align: center;
+    font-family: 'DancingScript-VariableFont_wght';
+}
+.row
+{
+    display: flex ;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.col
+{
+    flex-basis: 50%;
+    min-width: 250px;
+}
+.feature-img
+{
+    width: 83%;
+    margin: auto;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.small-img-row
+{
+    display: flex;
+    background: #FFF5EE;
+    margin: 20px 0;
+    align-items: center;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 85%;
+}
+.small-img
+{
+    position: relative;
+}
+.small-img embed
+{
+    width: 200px;
+}
+.small-img-row p
+{
+    margin-left: 20px;
+    color: gray;
+    line-height: 22px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.events
+{
+    
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0,.5);
+    float: right;
+    box-sizing: border-box;
+    overflow: auto;
+}*/

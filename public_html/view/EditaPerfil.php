@@ -1,52 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/edita-perfil.css">
-    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <title>Edita Perfil</title>
+    <link rel="stylesheet" href="../assets/Bibliotecas/Font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/cadastro.css">
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 
-    <!-- No evento document.ready realizar chamada Ajax para logincontroller.php buscando quem é o usuário logado
-    Se retornar sucesso carregar dados retornados no formulário -->
+    <script>
+
+        $(document).ready(function() {
+            $("#editForm").submit(function(e) {
+                e.preventDefault();
+                const nome = $("#nome").val();
+                const senha = $("#senha").val();
+                const instituicao = $("#instituicao").val();
+
+                $.ajax({
+                    url: "../controller/UsuarioController.php",
+                    data: {
+                        update: 1,
+                        nome,
+                        senha,
+                        instituicao
+                    },
+                    method: "POST",
+                    success: function(data) {
+                        if(data && JSON.parse(data)) {
+                            const response = JSON.parse(data)
+                            if(response.res) {
+                                alert("Dados do usuário atualizados com sucesso!")
+                            }
+                            else {
+                                alert("Não foi possível realizar esta operação, tente novamente mais tarde!")
+                            }
+                        }
+                        else {
+                            alert("Erro ao efetuar operação!")
+                        }
+                    }
+                })
+            });
+        });
+
+    </script>
 
 </head>
 
 <body>
-    <script src="../bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/edita-perfil.js"></script>
+<?php
 
-    <?php include_once "navBar.php"; ?>
-    <form id="form1" method="POST" action="" class="col-12">
-        <div id="prin" class="container">
-            <input type="hidden" id="email" name="email" value='<?=$usuario->email?>'>
-            <div class="col-12 d-flex p-5">
-                <div class="col-7 mx-auto">
-                    <div class="form-group"> <input type="text" id="nome" name="nome" class="form-control" required
-                            value='<?=$usuario->nome?>'>
-                        <label class="form-control-placeholder" for="nome">Nome</label>
-                    </div>
-                    <div class="form-group"> <input type="password" id="senha" name="senha" class="form-control"
-                            required>
-                        <label class="form-control-placeholder" for="senha">Senha</label>
-                    </div>
+    include_once "menu.php";
+    
+    session_start();
 
-                    <div class="form-group"> <input type="text" id="Instituição" name="instituicao" class="form-control"
-                            required value='<?=$usuario->instituicao?>'> <label class="form-control-placeholder"
-                            for="Instituição">Instituição</label>
-                    </div>
+    if(!isset($_SESSION["user"])){
+        header("Location: ../index.php");
+    }
 
-                    <p> <input id="bntAtualiza" type="button" value="Atualizar Perfil" class="btn btn-lg btn-primary" />
-                    </p>
-                </div>
-            </div>
+    $usuario_perfil = $_SESSION["user_perfil"]; 
+    $usuario_nome = $_SESSION["user_nome"] ;
+    $usuario_instituicao = $_SESSION["user_instituicao"];
+
+    if($usuario_perfil == "professor"){
+        navProfessor();
+    }
+    else{
+        navAluno();
+    }
+?>
+
+    <div class="container-cadastro">
+        <div class="signup-more">
+            <img src="../assets/img/edita.svg"alt="">
         </div>
-    </form>
+        <div class="wrap-signup">
 
+        <form id="editForm" class="col-10">
+                <span class="signup-form-title"> Editar Perfil</span>
+                <div class="wrap-input">
+                <!-- <input type="hidden" name="email" value=''> -->
+                    <span class="lable-iput">Novo Nome</span>
+                    <input value="<?=$usuario_nome?>" id="nome" type="text" name="nome" class="input" placeholder="Nome" />
+                    <span class="focus-input"></span>
+                </div>
+                <div class="wrap-input">
+                    <span class="lable-iput">Nova Senha</span>
+                    <input type="password" class="input" name="senha" placeholder="Senha" id="senha" minlength="5">
+                    <span class="focus-input"></span>
+                </div>
+                <div class="wrap-input">
+                    <span class="lable-iput">Nova Instituição de Ensino</span>
+                    <input type="text" id="instituicao" class="input" value='<?=$usuario_instituicao?>' name="instituicao" placeholder="Instituição de Ensino" id="instituicao">
+                   
+                    <span class="focus-input"></span>
+                </div>
+                <input type="submit" value="Atualizar Perfil" class="btn">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

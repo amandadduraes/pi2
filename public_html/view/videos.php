@@ -3,21 +3,35 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../assets/css/videos.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/main1.css">
+  <link rel="stylesheet" href="../assets/Bibliotecas/Font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+ 
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <title>Vídeos</title>
-  <script scr="../bibliotecas/jquery/jquery.min.js"></script>
-  <script src="../bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-  <script src="../bibliotecas/popper.min.js"></script>
-  <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+  <?php
+  include_once "menu.php";
+  include_once "../model/Usuario.php";
 
-<?php include_once "navBar.php"; ?>
+  session_start();
 
-  <div class="container-principal">
+  if (!isset($_SESSION["user"])) {
+    header("Location: ../index.php");
+  }
+
+  $usuario = $_SESSION["user_perfil"];
+
+
+  if ($usuario == 'professor') {
+    navProfessor();
+  } else {
+    navAluno();
+  }
+  ?>
+ <div class="container-principal">
     <div class="container-esquerda">
     </div>
     <div class="container-direita">
@@ -177,7 +191,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
-          <p class="text-info">Conceito Polimorfismo (Parte 2)</p>
+          <p class="text-info">Conceito Polimorfismo (Parte 1)</p>
         </div>
         <div class="small-img-row">
           <div class="small-img">
@@ -192,6 +206,5 @@
     </div>
   </div>
  
-</body>
 
 </html>

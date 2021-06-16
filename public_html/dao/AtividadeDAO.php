@@ -1,12 +1,12 @@
 <?php
 
 
-require_once(__DIR__."/../model/Conexao1.php");
+require_once(__DIR__."/Connection.php");
 require_once(__DIR__."/../model/Atividade.php");
 class AtividadeDAO {
   public static function getByTurmaCodigo($turmaCodigo) {
     try {
-		$conn = Conexao::getConexao();
+		$conn = Connection::getConn();
 
 			$sql = $conn->prepare(
 				'SELECT * FROM atividade
@@ -43,7 +43,7 @@ class AtividadeDAO {
 
   public static function buscarAtividadesDaTurma($turmaCodigo){
     try{
-      $conn = Conexao::getConexao();
+      $conn = Connection::getConn();
         
       $sql = $conn->prepare('
         SELECT ativ.id, ativ.descricao
@@ -63,7 +63,7 @@ class AtividadeDAO {
 
   public static function buscarNotasDeUmUsuarioNaTurma($usuarioEmail, $turmaCodigo){
     try{
-        $conn = Conexao::getConexao();
+        $conn = Connection::getConn();
         
         $sql = $conn->prepare('
           SELECT userAtiv.atividade_id, userAtiv.nota

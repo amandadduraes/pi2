@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amarante');
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -17,12 +17,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 html { overflow-y: scroll; }
 body { 
-  background: #c8e6ff;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* font-size: 62.5%;
+  background: #eee url('https://i.imgur.com/eeQeRmk.png'); /* https://subtlepatterns.com/weave/ */
+  font-family: 'Poppins-SemiBold', sans-serif;
+  font-size: 62.5%;
   line-height: 1;
-  color: #585858;
-  padding: 22px 10px; */
+  color: #000080;
+  padding: 22px 10px;
   padding-bottom: 55px;
 }
 
@@ -61,23 +61,24 @@ h1 {
   text-align: center;
 }
 
-
 /** page structure **/
 #wrapper {
   display: block;
-  width: 850px;
-  background: #57b3ff;
+  background: #fff;
   margin: 0 auto;
   padding: 10px 17px;
-  margin-top: 25px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
 }
 
 #keywords {
   margin: 0 auto;
   font-size: 1.2em;
   margin-bottom: 15px;
-}
 
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 #keywords thead {
   cursor: pointer;
@@ -87,20 +88,20 @@ h1 {
   font-weight: bold;
   padding: 12px 30px;
   padding-left: 42px;
-  border-bottom:3px solid #343a45;
-  border-right: 3px solid #343a45;
-  border-top:3px solid #343a45;
-  border-left: 3px solid #343a45;
 }
 #keywords thead tr th span { 
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: 100% 100%;
-  
+
+  display: inline-block;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden !important;
 }
 
 #keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
-  background: #8a9caa;
+  background: #acc8dd;
 }
 
 #keywords thead tr th.headerSortUp span {
@@ -112,16 +113,11 @@ h1 {
 
 
 #keywords tbody tr { 
-  color: black;
+  color: #000080;
 }
 #keywords tbody tr td {
   text-align: center;
   padding: 15px 10px;
-  background: #b7c2ca;
-  border-bottom:3px solid #343a45;
-  border-right: 3px solid #343a45;
-  border-top:3px solid #343a45;
-  border-left: 3px solid #343a45;
 }
 #keywords tbody tr td.lalign {
   text-align: left;

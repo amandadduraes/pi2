@@ -5,33 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bibliotecas/Font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/cria-quiz.css">
+    <link rel="stylesheet" href="../assets/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/Bibliotecas/Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/CriaQuiz.css">
     <title>Cria Quiz</title>
 </head>
 <body>
-    <script src="../bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/cria-quiz.js"></script>
-    <script src="../bibliotecas/popper.min.js"></script>
+    <script src="../assets/Bibliotecas/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../assets/Bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/CriaQuiz.js"></script>
     <?php
-    include_once "navBar.php";
-    include_once "../model/Usuario.php";
-    include "../model/Conexao1.php";
-    session_start();
-    if (!isset($_SESSION["user"])) {
-        header("Location: ../index.php");
-    }
-    $usuario = $_SESSION["user"];
-    if ($usuario->perfil == 'professor') {
-        navProfessor();
-    } else {
-        navAluno();
-    }
-    ?>
+
+include_once "menu.php";
+
+session_start();
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+$usuario_perfil = $_SESSION["user_perfil"]; 
+$usuario_nome = $_SESSION["user_nome"] ;
+$usuario_instituicao = $_SESSION["user_instituicao"];
+
+if($usuario_perfil == "professor"){
+    navProfessor();
+}
+else{
+    navAluno();
+}
+?>
     <!-- Os campos aparecerão aqui -->
-    <form id="form1" method="POST" action="../controller/cria-quizController.php" role="form">
+    <form id="form1" method="POST" action="../controller/CriaQuizController.php" role="form">
         <input type="hidden" name="acao" value="inserir">
         <div id="Questoes" class="Questoes col-12 p-5">
             <div class="d-flex p-5">

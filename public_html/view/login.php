@@ -1,133 +1,107 @@
-<?php
-
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
-    <script src="../bibliotecas/jquery/jquery.min.js"></script>
-    <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-    $(document).ready(function(){
-        $("#login").click(function(e) {
 
-            e.preventDefault();
+  <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/main1.css">
+  <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8" />
+  <title> Login</title>
+  <script>
+    $(document).ready(function() {
 
-            var email = $("#email").val();
-            var senha = $("#senha").val();
+      $("#login").submit(function(e) {
 
-           console.log("teste");
-            $.ajax({
-                type: "POST",
-                url: "../controller/LoginController.php",
-                data: {
-                    login: 1,
-                    email,
-                    senha,
-                },
-               
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log({
-                        jqXHR,
-                        textStatus,
-                        errorThrown
-                    })
+        e.preventDefault();
 
-                },
-                success: function(data) {
-                    console.log(data);
-                    var response = JSON.parse(data);
+        var email = $("#email").val();
+        var senha = $("#senha").val();
 
-                    if (response.res) {
-                        const user = response.user;
+        $.ajax({
+          type: "POST",
+          url: "../controller/UsuarioController.php",
+          data: {
+            login: 1,
+            email,
+            senha,
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log({
+              jqXHR,
+              textStatus,
+              errorThrown
+            })
 
-                        localStorage.setItem("user_email", user.email);
-                        localStorage.setItem("user_name", user.nome);
-                        localStorage.setItem("user_perfil", user.perfil);
+          },
+          success: function(data) {
+            var response = JSON.parse(data);
 
-                        if (user.perfil === "aluno") {
-                            location.href = "atividades.php";
-                        } else {
-                            location.href = "turmas.php";
+            if (response.res) {
+              const user = response.user;
 
-                        }
+              localStorage.setItem("user_email", user.email);
+              localStorage.setItem("user_name", user.nome);
+              localStorage.setItem("user_perfil", user.perfil);
 
-                        console.log(user);
-                    } else {
-                        alert("Usuário ou senha inválidos!");
-                    }
-                }
-                
-            });
-        })
+              location.href = "./turmas.php"
+
+              console.log(user);
+            } else {
+              alert("Usuário ou senha inválidos!");
+            }
+          }
+        });
+      })
     });
-    </script>
-    <script scr="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+  </script>
 </head>
 
 <body>
-    <?php
-$arrdeveter = [
-  "email",
-  "senha"
-];
-// print_r($_POST);
-$erro = false;
-foreach($arrdeveter as $dev){
-if(!isset($_POST[$dev])){
-$erro = true;
-// echo "<br>".$dev;
-}
-}
- //echo "<br>".$erro;
-if(!$erro){
-  $email=$_POST["email"];
-  $senha=$_POST["senha"];
-}
-?>
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-md-6 d-none d-md-flex bg-image"></div>
-            <div class="col-md-6 bg-light">
-                <div class="login d-flex align-items-center py-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7 col-xl-6 mx-auto">
-                                <h3 class="display-4">LOGIN</h3> <br>
-                                <form method="POST" action="">
-                                    <div class="form-group mb-3"> 
-                                    <input name="email" id="email" type="email"placeholder="Email" required="" autofocus=""                                            class="form-control rounded-pill border-0 shadow-sm px-4"> </div>
-                                    <div class="form-group mb-3"> <input name="senha" id="senha" type="password"
-                                            placeholder="Senha" required=""
-                                            class="form-control rounded-pill border-0 shadow-sm px-4 text-danger"><br>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-3"> <input id="customCheck1"
-                                            type="checkbox" checked class="custom-control-input"> <label
-                                            for="customCheck1" class="custom-control-label">Mantenha-me
-                                            Conectado</label> </div>
-                                    <button type="submit" id="login"
-                                        class="btn btn-danger btn-block text-uppercase mb-2 rounded-pill shadow-sm">Conectar-se</button>
-                                    <div class="text-center d-flex justify-content-between mt-4">
-                                        <p> Não tem cadastro? &nbsp<a href="cadastro.php"
-                                                class="font-italic text-muted"> <u>Crie
-                                                    uma conta</u></a></p>
-                                        <p><a href="../index.php" class="font-italic text-muted"> <u>menu</u></a></p>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 
+  <main class="corpo">
+    
+    <div class="container">
+      <div class="img">
+        <img src="../assets/img/login1.svg" alt="">
+      </div>
+      <div class="login-container">
+        <form id="login">
+          <img class="avatar" src="../assets/img/profile1.svg" alt="">
+          <h2>Login</h2>
+
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"> </i>
+
+
+            </div>
+            <div>
+              <h5>E-mail: </h5>
+              <input type="email" class="input" placeholder="E-mail" id="email">
+            </div>
+          </div>
+          <div class="input-div two">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+
+            <div>
+              <h5>Senha</h5>
+              <input type="password" class="input" placeholder="Senha" id="senha">
+            </div>
+          </div>
+          <!-- <a href="#"> Esqueceu a senha?</a>
+                    <br> -->
+          <a href="./cadastro.php"> Não é cadastrado? Clique aqui para se cadastrar.</a>
+          <input type="submit" class="btn" value="Login">
+        </form>
+      </div>
+    </div>
+  </main>
+<script type="text/javascript" src="../assets/js/main.js"></script>
+</body>
 </html>

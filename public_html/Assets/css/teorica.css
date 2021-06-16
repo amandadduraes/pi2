@@ -2,14 +2,14 @@ body
 {
     margin: 0;
     padding: 0;
-    font-family:'Poppins-SemiBold' ;
+    font-family: 'Poppins-SemiBold';
 }
 section
 {
     width: 100%;
     height: 100vh;
-    background: url(../img/atividades1.svg) no-repeat;
-     /*background-size: cover;*/
+    background: url(../img/atividade1.svg);
+    /* background-size: cover; */
 }
 section .leftBox
 {
@@ -22,16 +22,19 @@ section .leftBox
 section .leftBox .content
 {
     color: #fff;
-    background:transparent ;
+    background:#000080;;
     padding: 40px;
     transition: .5s;
 
 }
-
+section .leftBox .content:hover
+{
+    background:aqua;
+}
 section .leftBox .content h1
 {
-    margin: -90px;
-    padding:-80px;
+    margin: 0;
+    padding: 0;
     font-size: 50px;
 }
 section .leftBox .content p
@@ -44,7 +47,7 @@ section .events
     
     width: 50%;
     height: 100%;
-    background: white;
+    background: rgba(0, 0, 0,.5);
     float: right;
     box-sizing: border-box;
     overflow: auto;
@@ -68,7 +71,7 @@ section .events ul li .time
 {
    position: relative; 
    padding: 20px;
-   background: 	#ADD8E6;
+   background: #262626;
    box-sizing: border-box;
    width: 30%;
    height: 100%;
@@ -78,7 +81,7 @@ section .events ul li .time
 }
 section .events ul li:hover .time
 {
-    background: #B0C4DE	;
+    background: aqua;
 }
 section .events ul li .time h2
 {
@@ -124,18 +127,18 @@ section .events ul li .details a
     display: inline-block;
     text-decoration: none;
     padding: 10px 15px;
-    border: 2px solid 	#1E90FF;
+    border: 2px solid black;
     margin-top: 15px;
     font-size: 18px;
     transition: .5s;
-    color:#ADD8E6;
+    color: aqua;
    
 }
 section .events ul li .details a:hover
 {
-    background: #ADD8E6;
+    background: aqua;
     color: white;
-    border-color: 	#708090;
+    border-color: aqua;
 
 }
 

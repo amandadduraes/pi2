@@ -1,19 +1,18 @@
+
 <html>
+   <head>   
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cadastro</title>
 
-<head>    
-    <title>Cadastro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/cadastro.css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../bibliotecas/jquery/jquery.min.js"></script>
-    <script src="../bibliotecas/popper.min.js"></script>
-    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-        
+      <link rel="stylesheet" type="text/css" href="../assets/css/main1.css">
+      <link rel="stylesheet" type="text/css" href="../assets/css/cadastro.css">
+      <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../assets/css/turmas.css">     
 
-    <script type="text/javascript">
+      <script type="text/javascript">
 
         $(document).ready(function () {
           $('#cadastrar').submit(function(e) {
@@ -63,53 +62,50 @@
           })
       })
      </script>
+   </head>
 
-</head>
+   <body>
 
-<body>
-
-    <div class="container-cadastro">
-        <div class="signup-more">
+      <div class="container-cadastro">
+         <div class="signup-more">
             <img src="../assets/img/cadastro.svg" alt="">
-        </div>
-        <div class="wrap-signup">
-
-            <form id="cadastrar" class="signup-form" name="cadastro" method="POST"> 
-                <span class="signup-form-title text-info"> Cadastrar</span>
-                <a href="login.php" class="link-to-login text-info "> Já é cadastrado? Clique aqui para fazer login.</a>
-                <div class="wrap-input">
-                    <span class="lable-iput">Nome</span>
-                    <input id="nome" type="text" name="nome" class="input" placeholder="Nome" required />
-                    <span class="focus-input"></span>
-                </div>
-                <div class="wrap-input">
-                    <span class="lable-iput">E-mail</span>
-                    <input type="email" class="input" name="email" placeholder="E-mail" id="email" required>
-                    <span class="focus-input"></span>
-                </div>
-                <div class="wrap-input">
-                    <span class="lable-iput">Senha</span>
-                    <input type="password" class="input" name="senha" placeholder="Senha" id="senha" required >
-                    <span class="focus-input"></span>
-                </div>
-                <div class="wrap-input">
-                    <span class="lable-iput">Instituição de Ensino</span>
-                    <input type="text" class="input" name="instituicao" placeholder="Instituição de Ensino"id="instituicao" required maxlength="128">
-                    <span class="focus-input"></span>
-                </div>
-                <div class="wrap-input">
-                    <span class="lable-iput ">Perfil</span>
-                    <select name="perfil" id="perfil" class="input border-none" required>
-                        <option value="aluno">Aluno</option>
-                        <option value="professor">Professor</option>
-                    </select>
-                    <span class="focus-input"></span>
-                </div>
-                <input type="submit" class="btn" value="Cadastrar">
+         </div>
+         <div class="wrap-signup">
+          
+            <form  id="cadastrar" class="signup-form" name="cadastro">
+               <span class="signup-form-title"> Cadastrar</span>
+               <a href="./login.php" class="link-to-login"> Já é cadastrado? Clique aqui para fazer login.</a>
+               <div class="wrap-input">
+                  <span class="lable-iput">Nome</span>
+                  <input id="nome" type="text" name="nome" class="input" placeholder="Nome" required/>
+                  <span class="focus-input"></span>
+               </div>
+               <div class="wrap-input">
+                  <span class="lable-iput">E-mail</span>
+                  <input type="email" class="input" name="email" placeholder="E-mail" id="email" required>
+                  <span class="focus-input"></span>
+               </div>
+               <div class="wrap-input">
+                  <span class="lable-iput">Senha</span>
+                  <input type="password" class="input" name="senha" placeholder="Senha"  id="senha" required>
+                  <span class="focus-input"></span>
+               </div>
+               <div class="wrap-input">
+                  <span class="lable-iput">Instituição de Ensino</span>
+                  <input type="text" class="input" name="instituicao" placeholder="Instituição de Ensino" id="instituicao" required>
+                  <span class="focus-input"></span>
+               </div>
+               <div class="wrap-input">
+                  <span class="lable-iput">Perfil</span>
+                  <select name="perfil" id="perfil" class="input border-none" required>
+                     <option value="aluno">Aluno</option>
+                     <option value="professor">Professor</option>
+                  </select>
+                  <span class="focus-input"></span>
+               </div>
+               <input type="submit" class="btn" value="Cadastrar">
             </form>
-        </div>
-    </div>
-</body>
-
-
+         </div>
+      </div>
+   </body>
 </html>

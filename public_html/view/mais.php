@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/mais.css">
-    <link rel="stylesheet" href="../bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-</head>
+        <link rel="stylesheet" type="text/css" href="../assets/css/mais.css">
+        <link rel="stylesheet" href="../assets/Bibliotecas/Font-awesome/css/font-awesome.min.css">
+       <link rel="stylesheet" href="../assets/Bibliotecas/bootstrap-4.5.3-dist/css/bootstrap.min.css"> 
+        
+        
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+  <?php
 
-<body>
+include_once "menu.php";
+include_once "../model/Usuario.php";
+session_start();
 
-<?php include_once "navBar.php"; ?>
-   
+
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
+        $usuario = $_SESSION["user_perfil"];
+
+
+if($usuario == 'professor'){
+    navProfessor();
+}else{
+    navAluno();
+}
+?>
+    
+    <input type="hidden" name="success_url" value="./mais.php"/>
+    <input type="hidden" name="error_url" value="./mais.php?err=1"/>
+
     <div class="container-teste">
         <span class="big-circle"></span>
         <img src="../assets/img/corpo1.png" class="square" alt="" />
@@ -75,12 +101,15 @@
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../bibliotecas/jquery/jquery-3.3.1.slim.min.js">
-    </script>
-    <script src="../bibliotecas/popper.min.js"> </script>
-    <script src="../bibliotecas/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-</body>
-
+    <script>
+      var submitButton = document.getElementById("submit_form");
+      var form = document.getElementById("email_form");
+      form.addEventListener("submit", function (e) {
+          setTimeout(function() {
+              submitButton.value = "Enviando...";
+              submitButton.disabled = true;
+          }, 1);
+      });
+  </script>
+  </body>
 </html>

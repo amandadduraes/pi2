@@ -31,8 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				session_start();
 				
 				
-				$_SESSION["user"] = 1;
-				$_SESSION["user_perfil"] = $user->perfil;
+				$_SESSION["user"] = $user;
 
 				$res["res"] = TRUE;
 				$res["msg"] = "Usuario encontrado!";

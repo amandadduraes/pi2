@@ -86,6 +86,19 @@ next_btn.onclick = ()=>{
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
 
+        // TODO
+        // FAZER AJAX PARA SALVAR RESULTADO DO ALUNO
+        const atividadeId =  $("#hiddenAtividadeId").val()
+        $.ajax({
+            url: "../controller/UsuarioHasAtividadeController.php",
+            method: "POST",
+            data: {
+                update: 1,
+                nota: userScore/questions.length * 100,
+                atividadeId,
+            }
+        });
+
         showResult();
         //calling showResult function
     }

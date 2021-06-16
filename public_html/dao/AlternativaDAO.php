@@ -1,14 +1,14 @@
 <?php
 
 
-require_once (__DIR__."/../model/Conexao1.php");
+require_once (__DIR__."/Connection.php");
 require_once (__DIR__."/../model/Alternativa.php"); 
 
 
 class AlternativaDAO {
   public static function getByQuestaoId($questaoId) {
     try {
-			$conn = Conexao::getConexao();
+			$conn = Connection::getConn();
 
 			$sql = $conn->prepare(
 				'SELECT * FROM alternativa
